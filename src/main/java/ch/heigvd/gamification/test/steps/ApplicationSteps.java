@@ -56,10 +56,10 @@ public class ApplicationSteps {
         throw new PendingException();
     }
 
-    @Then("^I receive a (\\d+)  status code$")
-    public void i_receive_a_status_code(int status) throws Throwable {
+    @Then("^I receive a (\\d+) status code$")
+    public void i_receive_a_status_code(int arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        assertEquals(status, statusCode);
+        assertEquals(arg1, statusCode);
         throw new PendingException();
     }
 

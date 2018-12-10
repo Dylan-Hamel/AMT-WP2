@@ -15,5 +15,5 @@ Feature: Application registration
         Given: I have an application payload
         When I POST it to the /registration endpoint
         And I POST it to the registration
-        Then I receive a 422  status code
+        Then I receive a 422 status code
 
