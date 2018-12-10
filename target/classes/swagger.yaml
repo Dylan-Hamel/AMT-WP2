@@ -1,0 +1,55 @@
+swagger: '2.0'
+info:
+  description: This is the API documentation of the AMT Gamification project
+  version: 1.0.0
+  title: GamificationAPI
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: 'localhost:8080'
+basePath: /api
+schemes:
+  - https
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /registration:
+    get:
+      responses:
+        '200':
+          description: list all registered applications
+          schema:
+            title: Registration summary
+            type: array
+            items:
+              $ref: '#/definitions/RegistrationSummary'
+    post:
+      parameters:
+        - name: registration
+          in: body
+          description: the info required to register an application
+          schema:
+            $ref: '#/definitions/Registration'
+          required: true
+      responses:
+        '200':
+          description: Register a new application
+definitions:
+  RegistrationSummary:
+    type: object
+    properties:
+      applicationName:
+        type: string
+  Registration:
+    type: object
+    properties:
+      name:
+        type: string
+      password:
+        type: string
