@@ -9,8 +9,13 @@ import javax.persistence.ManyToOne;
 
 /**
  *
- * @author Olivier Liechti
+ * @author Ansermoz Yannis
+ * @author de Bourgues Cyril
+ * @author Hamel Dylan
+ * @author Pradervand Kevin
+ *
  */
+
 @Entity
 public class EndUser implements Serializable {
   

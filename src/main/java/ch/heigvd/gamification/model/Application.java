@@ -1,26 +1,30 @@
 package ch.heigvd.gamification.model;
 
 import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  *
- * @author Olivier Liechti
+ * @author Ansermoz Yannis
+ * @author de Bourgues Cyril
+ * @author Hamel Dylan
+ * @author Pradervand Kevin
+ *
  */
+
 @Entity
+@Table(name = "application")
 public class Application implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "id")
   private long id;
 
-  @Column(unique = true)
+  @Column(name = "name", unique = true)
   private String name;
 
+  @Column(name = "passwordHash", nullable = false)
   private String passwordHash;
 
   public long getId() {
@@ -44,6 +48,7 @@ public class Application implements Serializable {
   }
 
   public void setPasswordHash(String passwordHash) {
+    // TODO : generate a secure pass hash
     this.passwordHash = passwordHash;
   }
 
