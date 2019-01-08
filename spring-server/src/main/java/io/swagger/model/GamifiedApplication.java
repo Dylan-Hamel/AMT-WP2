@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -12,7 +13,8 @@ import javax.validation.constraints.*;
  * The info of a gamified application
  */
 @ApiModel(description = "The info of a gamified application")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T14:04:10.019+01:00")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T20:53:35.584+01:00")
 
 public class GamifiedApplication   {
   @JsonProperty("name")
@@ -26,7 +28,7 @@ public class GamifiedApplication   {
     return this;
   }
 
-   /**
+  /**
    * The unique name of the gamified application
    * @return name
   **/
@@ -46,7 +48,7 @@ public class GamifiedApplication   {
     return this;
   }
 
-   /**
+  /**
    * The password of the gamified application
    * @return password
   **/

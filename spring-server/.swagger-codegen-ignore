@@ -24,3 +24,16 @@
 
 pom.xml
 README.md
+/model/
+model/
+
+.travis.yml
+build.gradle
+build.sbt
+git_push.sh
+gradle.properties
+gradlew
+gradlew.bat
+settings.gradle
+gradle/
+AndroidManifest.xml

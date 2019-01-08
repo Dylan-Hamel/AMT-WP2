@@ -1,14 +1,11 @@
-package io.wp2.api.spec.steps;
+package io.swagger.api.spec.steps;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import io.wp2.ApiException;
-import io.wp2.ApiResponse;
-import io.wp2.api.DefaultApi;
-import io.wp2.api.dto.Registration;
-import io.wp2.api.spec.helpers.Environment;
+import cucumber.api.java.en.*;
+import io.swagger.ApiException;
+import io.swagger.ApiResponse;
+import io.swagger.api.DefaultApi;
+import io.swagger.api.model.Registration;
+import io.swagger.api.spec.helpers.Environment;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
@@ -40,7 +37,7 @@ public class CreationSteps {
 
     @Given("^I have a fruit payload$")
     public void i_have_a_fruit_payload() throws Throwable {
-        fruit = new io.wp2.api.dto.Fruit();
+        fruit = new io.swagger.api.dto.Fruit();
     }
 
     @When("^I POST it to the /fruits endpoint$")

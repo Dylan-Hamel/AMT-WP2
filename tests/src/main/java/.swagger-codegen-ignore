@@ -24,3 +24,14 @@
 
 pom.xml
 README.md
+.travis.yml
+build.gradle
+build.sbt
+git_push.sh
+gradle.properties
+gradlew
+gradlew.bat
+settings.gradle
+gradle/
+AndroidManifest.xml
+/src/main/AndroidManifest.xml

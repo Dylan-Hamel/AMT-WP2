@@ -1,6 +1,6 @@
-package io.wp2.api.spec.helpers;
+package io.swagger.api.spec.helpers;
 
-import io.wp2.api.DefaultApi;
+import io.swagger.api.DefaultApi;
 
 import java.io.IOException;
 import java.util.Properties;

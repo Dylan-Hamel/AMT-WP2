@@ -9,6 +9,7 @@ import io.swagger.model.Badge;
 import io.swagger.model.PointsOnPointScale;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -16,16 +17,19 @@ import javax.validation.constraints.*;
  * An user doing various actions in an application
  */
 @ApiModel(description = "An user doing various actions in an application")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T14:04:10.019+01:00")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T20:53:35.584+01:00")
 
 public class User   {
   @JsonProperty("username")
   private String username = null;
 
   @JsonProperty("badges")
+  @Valid
   private List<Badge> badges = null;
 
   @JsonProperty("points")
+  @Valid
   private List<PointsOnPointScale> points = null;
 
   public User username(String username) {
@@ -33,7 +37,7 @@ public class User   {
     return this;
   }
 
-   /**
+  /**
    * The username of the user
    * @return username
   **/
@@ -61,7 +65,7 @@ public class User   {
     return this;
   }
 
-   /**
+  /**
    * The badges awarded to the user
    * @return badges
   **/
@@ -90,7 +94,7 @@ public class User   {
     return this;
   }
 
-   /**
+  /**
    * The points received by the user
    * @return points
   **/
