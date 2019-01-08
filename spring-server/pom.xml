@@ -114,6 +114,7 @@
         </dependency>
         -->
 
+        <!--
         <dependency>
             <groupId>com.squareup.okhttp</groupId>
             <artifactId>okhttp</artifactId>
@@ -129,6 +130,7 @@
             <artifactId>gson</artifactId>
             <version>${gson-version}</version>
         </dependency>
+        -->
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>javax.persistence-api</artifactId>
