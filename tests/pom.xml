@@ -29,13 +29,27 @@
         <groupId>io.swagger</groupId>
         <artifactId>swagger-codegen-maven-plugin</artifactId>
         <version>2.2.3</version>
+        <dependencies>
+          <dependency>
+            <groupId>cd.connect.openapi</groupId>
+            <artifactId>connect-openapi-jersey2</artifactId>
+            <version>1.4</version>
+          </dependency>
+        </dependencies>
         <executions>
           <execution>
             <goals>
               <goal>generate</goal>
             </goals>
+            <phase>generate-sources</phase>
             <configuration>
               <inputSpec>src/main/resources/swagger.yaml</inputSpec>
+              <!--
+              <apiPackage>cd.connect.example.api</apiPackage>
+              <modelPackage>cd.connect.example.model</modelPackage>
+              <language>jersey2-api</language>
+              <library>jersey2-api</library>
+              -->
               <language>java</language>
               <!--
               <library>jersey2</library>

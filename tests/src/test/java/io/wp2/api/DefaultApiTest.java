@@ -14,22 +14,11 @@
 package io.wp2.api;
 
 import io.wp2.ApiException;
-import io.wp2.api.dto.Badge;
-import io.wp2.api.dto.Credentials;
-import io.wp2.api.dto.Event;
-import io.wp2.api.dto.EventRule;
-import io.wp2.api.dto.GamifiedApplication;
-import io.wp2.api.dto.PointScale;
-import io.wp2.api.dto.Token;
-import io.wp2.api.dto.TriggerRule;
-import io.wp2.api.dto.User;
-import org.junit.Test;
+import io.wp2.api.dto.*;
 import org.junit.Ignore;
+import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for DefaultApi
