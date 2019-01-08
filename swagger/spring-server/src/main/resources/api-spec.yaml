@@ -1,51 +1,548 @@
 swagger: '2.0'
 info:
-  version: '0.1.0'
-  title: Fruits API
-  description: An API to demonstrate Swagger and Spring Boot
-host: localhost:8080
+  description: This is the API documentation of the AMT Gamification project
+  version: 1.0.0
+  title: GamificationAPI
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: 'localhost:8080'
 basePath: /api
 schemes:
+  - https
   - http
+consumes:
+  - application/json
+produces:
+  - application/json
 paths:
-  /fruits:
+  /register/:
     post:
-      description: create a fruit
-      operationId: createFruit
-      consumes:
-        - application/json
+      summary: "Register an application"
       parameters:
-        - name: fruit
+        - name: body
           in: body
+          description: "Required informations"
           required: true
           schema:
-            $ref: '#/definitions/Fruit'
+            $ref: "#/definitions/GamifiedApplication"
       responses:
-        '201':
-          description: created
+        201:
+          description: "Successfully done"
+        409:
+          description: "Name already taken"
+  /auth/:
+    post:
+      summary: "Authenticate an application"
+      parameters:
+        - name: body
+          in: body
+          description: "Application credentials"
+          required: true
           schema:
-            type: object
-    get:
-      description: get the list of all fruits
-      operationId: getFruits
-      produces:
-        - application/json
+            $ref: "#/definitions/Credentials"
       responses:
-        '200':
-          description: success
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/Token"
+        400:
+          description: "Already authenticated"
+        401:
+          description: "Authentication failed"
+        404:
+          description: "No such application"
+  /events/:
+    post:
+      summary: "Create an event"
+      description: "Create event triggered by user action for a given application"
+      parameters:
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/Event"
+      responses:
+        201:
+          description: "Successfully done"
+  /users/:
+    get:
+      summary: "List all users linked to current application"
+      description: "List all users linked to current application"
+      responses:
+        200:
+          description: "Successfully done"
           schema:
             type: array
             items:
-              $ref: '#/definitions/Fruit'
+              $ref: "#/definitions/User"
+  /users/{id}/:
+    get:
+      summary: "Fetch specific user"
+      parameters:
+        - name: id
+          in: path
+          description: "User ID"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            $ref: "#/definitions/User"
+        404:
+          description: "No such user"
+  /badges/:
+    get:
+      summary: "List all badges linked to current application"
+      responses:
+        200:
+          description: "Successfully"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Badge"
+    post:
+      summary: "Create new badge"
+      parameters:
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/Badge"
+      responses:
+        201:
+          description: "Successfully done"
+          headers:
+            Location:
+              description: "URI of newly created object"
+              type: string
+        409:
+          description: "Badge already existing"
+  /badges/{name}/:
+    get:
+      summary: "Fetch specific badge"
+      parameters:
+        - name: name
+          in: path
+          description: "Badge name"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            $ref: "#/definitions/Badge"
+        404:
+          description: "No such badge"
+    post:
+      summary: "Update specific badge"
+      parameters:
+        - name: name
+          in: path
+          description: "Badge name"
+          required: true
+          type: string
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/Badge"
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such badge"
+        409:
+          description: "Badge already existing"
+    delete:
+      summary: "Deletes specific badge"
+      parameters:
+        - name: name
+          in: path
+          description: "Badge name"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such badge"
+  /pointScales/:
+    get:
+      summary: "List point scales linked to current application"
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/PointScale"
+    post:
+      summary: "Create point scale"
+      parameters:
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/PointScale"
+      responses:
+        201:
+          description: "Successfully done"
+          headers:
+            Location:
+              description: "URI of newly created object"
+              type: string
+        409:
+          description: "Point scale already existing"
+  /pointScales/{name}/:
+    get:
+      summary: "Fetch specific point scale"
+      parameters:
+        - name: name
+          in: path
+          description: "Point scale name"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/PointScale"
+        404:
+          description: "No such point scale"
+    post:
+      summary: "Update specific point scale"
+      parameters:
+        - name: name
+          in: path
+          description: "Point scale name"
+          required: true
+          type: string
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/PointScale"
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such point scale"
+        409:
+          description: "Point scale already exists"
+    delete:
+      summary: "Deletes specific point scale"
+      parameters:
+        - name: name
+          in: path
+          description: "Point scale name"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such point scale"
+  /rules/events/:
+    get:
+      summary: "List events rules linked to current application"
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/EventRule"
+    post:
+      summary: "Create a new event rule"
+      parameters:
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/EventRule"
+      responses:
+        201:
+          description: "Successfully done"
+          headers:
+            Location:
+              description: "URI of newly created object"
+              type: string
+        404:
+          description: "No such event rule"
+        409:
+          description: "Event rule already exists"
+  /rules/events/{name}/:
+    get:
+      summary: "Fetch specific event rule"
+      parameters:
+        - name: name
+          in: path
+          description: "Event rule name"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            $ref: "#/definitions/EventRule"
+        404:
+          description: "No such event rule"
+    post:
+      summary: "Update specific event rule"
+      parameters:
+        - name: name
+          in: path
+          description: "Event rule name"
+          required: true
+          type: string
+        - name: body
+          in: body
+          description: "URL of the modified event rule"
+          required: true
+          schema:
+            $ref: "#/definitions/EventRule"
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such event rule"
+        409:
+          description: "Event rule already exists"
+    delete:
+      summary: "Delete specific event rule"
+      parameters:
+        - name: name
+          in: path
+          description: "Event rule name"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such event rule"
+  /rules/triggers/:
+    get:
+      summary: "List all trigger rules for current application"
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/TriggerRule"
+    post:
+      summary: "Create trigger rule"
+      parameters:
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/TriggerRule"
+      responses:
+        201:
+          description: "Successfully done"
+          headers:
+            Location:
+              description: "URI of newly created object"
+              type: string
+        400:
+          description: "No such trigger rule"
+        409:
+          description: "Trigger rule already exists"
+  /rules/triggers/{name}/:
+    get:
+      summary: "Fetch specific trigger rule"
+      parameters:
+        - name: name
+          in: path
+          description: "Trigger rule name"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            $ref: "#/definitions/TriggerRule"
+        404:
+          description: "No such trigger rule"
+    post:
+      summary: "Update specific trigger rule"
+      parameters:
+        - name: name
+          in: path
+          description: "Trigger rule name"
+          required: true
+          type: string
+
+        - name: body
+          in: body
+          description: "Modified trigger rule"
+          required: true
+          schema:
+            $ref: "#/definitions/TriggerRule"
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such trigger rule"
+        409:
+          description: "Trigger rule already exists"
+    delete:
+      summary: "Delete specific trigger rule"
+      parameters:
+        - name: name
+          in: path
+          description: "Trigger rule name"
+          required: true
+          type: string
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such trigger rule"
+
 definitions:
-  Fruit:
+  GamifiedApplication:
+    description: "The info of a gamified application"
     type: object
     properties:
-      kind:
+      name:
         type: string
-      colour:
+        description: "The unique name of the gamified application"
+      password:
         type: string
-      size:
+        description: "The password of the gamified application"
+  Credentials:
+    description: "The credentials of an application"
+    type: object
+    properties:
+      username:
         type: string
-      weight:
+        description: "The username of the application"
+      password:
         type: string
+        description: "The password of the application"
+
+  Token:
+    type: object
+    properties:
+      applicationName:
+        type: string
+
+  PointsOnPointScale:
+    description: "How many points an user has on a given point scale"
+    type: object
+    properties:
+      pointScaleId:
+        type: number
+        description: "The point scale"
+      points:
+        type: number
+        description: "How many points are on the point scale"
+
+  Event:
+    description: "An event created when an user does something on the application"
+    type: object
+    properties:
+      type:
+        type: string
+        description: "The type of the event"
+      username:
+        type: string
+        description: "The username of the user"
+      hashMap:
+        type: object
+        additionalProperties:
+          properties:
+            code:
+              type: string
+              description: "ID"
+            text:
+              type: string
+              description: "content"
+
+  User:
+    description: "An user doing various actions in an application"
+    type: object
+    properties:
+      username:
+        type: string
+        description: "The username of the user"
+      badges:
+        description: "The badges awarded to the user"
+        type: array
+        items:
+          $ref: "#/definitions/Badge"
+      points:
+        description: "The points received by the user"
+        type: array
+        items:
+          $ref: "#/definitions/PointsOnPointScale"
+
+  Badge:
+    description: "A badge in an application"
+    type: object
+    properties:
+      name:
+        type: string
+        description: "The name of the badge"
+
+  PointScale:
+    description: "A point scale in an application"
+    type: object
+    properties:
+      name:
+        description: "The name of the point scale"
+        type: string
+
+  EventRule:
+    description: "A rule applied on event creation"
+    type: object
+    properties:
+      name:
+        type: string
+        description: "The name of the rule"
+      event:
+        type: string
+        description: "The event on which the rule is applied"
+      pointScale:
+        type: string
+        description: "The point scale on which the rule is applied"
+      pointsGiven:
+        type: number
+        description: "How many points are given on the point scale"
+
+  TriggerRule:
+    description: "A rule applied on point scale change"
+    type: object
+    properties:
+      name:
+        type: string
+        description: "The name of the rule"
+      badgeAwarded:
+        type: string
+        description: "The badge awarded when rule condition matched"
+      pointScale:
+        type: string
+        description: "The point scale on which the rule is applied"
+      limit:
+        type: number
+        description: "The point limit to award the badge"
+      aboveLimit:
+        type: boolean
+        description: "Whether the badge is given above or below point limit"

@@ -1,6 +1,6 @@
-package io.avalia.fruits.api.exceptions;
+package io.avalia.fruits.api;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-07-26T19:36:34.802Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-07T19:12:38.721Z")
 
 public class ApiException extends Exception{
     private int code;
