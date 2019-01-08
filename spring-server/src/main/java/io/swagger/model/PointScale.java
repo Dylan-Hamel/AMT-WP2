@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -12,7 +13,8 @@ import javax.validation.constraints.*;
  * A point scale in an application
  */
 @ApiModel(description = "A point scale in an application")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T14:04:10.019+01:00")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T20:53:35.584+01:00")
 
 public class PointScale   {
   @JsonProperty("name")
@@ -23,7 +25,7 @@ public class PointScale   {
     return this;
   }
 
-   /**
+  /**
    * The name of the point scale
    * @return name
   **/

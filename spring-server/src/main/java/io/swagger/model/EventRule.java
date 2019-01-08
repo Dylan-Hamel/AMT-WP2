@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
+import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -13,7 +14,8 @@ import javax.validation.constraints.*;
  * A rule applied on event creation
  */
 @ApiModel(description = "A rule applied on event creation")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T14:04:10.019+01:00")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T20:53:35.584+01:00")
 
 public class EventRule   {
   @JsonProperty("name")
@@ -33,7 +35,7 @@ public class EventRule   {
     return this;
   }
 
-   /**
+  /**
    * The name of the rule
    * @return name
   **/
@@ -53,7 +55,7 @@ public class EventRule   {
     return this;
   }
 
-   /**
+  /**
    * The event on which the rule is applied
    * @return event
   **/
@@ -73,7 +75,7 @@ public class EventRule   {
     return this;
   }
 
-   /**
+  /**
    * The point scale on which the rule is applied
    * @return pointScale
   **/
@@ -93,7 +95,7 @@ public class EventRule   {
     return this;
   }
 
-   /**
+  /**
    * How many points are given on the point scale
    * @return pointsGiven
   **/

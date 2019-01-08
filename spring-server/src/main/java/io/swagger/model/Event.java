@@ -9,6 +9,7 @@ import io.swagger.model.EventHashMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -16,7 +17,8 @@ import javax.validation.constraints.*;
  * An event created when an user does something on the application
  */
 @ApiModel(description = "An event created when an user does something on the application")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T14:04:10.019+01:00")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T20:53:35.584+01:00")
 
 public class Event   {
   @JsonProperty("type")
@@ -26,6 +28,7 @@ public class Event   {
   private String username = null;
 
   @JsonProperty("hashMap")
+  @Valid
   private Map<String, EventHashMap> hashMap = null;
 
   public Event type(String type) {
@@ -33,7 +36,7 @@ public class Event   {
     return this;
   }
 
-   /**
+  /**
    * The type of the event
    * @return type
   **/
@@ -53,7 +56,7 @@ public class Event   {
     return this;
   }
 
-   /**
+  /**
    * The username of the user
    * @return username
   **/
@@ -81,7 +84,7 @@ public class Event   {
     return this;
   }
 
-   /**
+  /**
    * Get hashMap
    * @return hashMap
   **/

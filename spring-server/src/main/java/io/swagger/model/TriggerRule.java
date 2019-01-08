@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
+import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -13,7 +14,8 @@ import javax.validation.constraints.*;
  * A rule applied on point scale change
  */
 @ApiModel(description = "A rule applied on point scale change")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T14:04:10.019+01:00")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T20:53:35.584+01:00")
 
 public class TriggerRule   {
   @JsonProperty("name")
@@ -36,7 +38,7 @@ public class TriggerRule   {
     return this;
   }
 
-   /**
+  /**
    * The name of the rule
    * @return name
   **/
@@ -56,7 +58,7 @@ public class TriggerRule   {
     return this;
   }
 
-   /**
+  /**
    * The badge awarded when rule condition matched
    * @return badgeAwarded
   **/
@@ -76,7 +78,7 @@ public class TriggerRule   {
     return this;
   }
 
-   /**
+  /**
    * The point scale on which the rule is applied
    * @return pointScale
   **/
@@ -96,7 +98,7 @@ public class TriggerRule   {
     return this;
   }
 
-   /**
+  /**
    * The point limit to award the badge
    * @return limit
   **/
@@ -117,14 +119,14 @@ public class TriggerRule   {
     return this;
   }
 
-   /**
+  /**
    * Whether the badge is given above or below point limit
    * @return aboveLimit
   **/
   @ApiModelProperty(value = "Whether the badge is given above or below point limit")
 
 
-  public Boolean getAboveLimit() {
+  public Boolean isAboveLimit() {
     return aboveLimit;
   }
 

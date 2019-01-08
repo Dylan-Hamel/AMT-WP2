@@ -15,7 +15,7 @@
     <jodatime-version>2.9.4</jodatime-version>
     <okhttp-version>2.7.5</okhttp-version>
     <gson-version>2.8.5</gson-version>
-    <io.wp2.server.url>http://localhost:8880/api/</io.wp2.server.url>
+    <io.swagger.url>http://localhost:8880/api/</io.swagger.url>
   </properties>
   <build>
     <testResources>
@@ -24,18 +24,18 @@
         <filtering>true</filtering>
       </testResource>
     </testResources>
-    <!--
-    <dependency>
-      <groupId>io.swagger.codegen.v3</groupId>
-      <artifactId>swagger-codegen</artifactId>
-      <version>3.0.3</version>
-    </dependency>
-  -->
+
     <plugins>
       <plugin>
         <groupId>io.swagger</groupId>
         <artifactId>swagger-codegen-maven-plugin</artifactId>
         <version>2.3.1</version>
+        <!--
+        <groupId>io.swagger.codegen.v3</groupId>
+        <artifactId>swagger-codegen</artifactId>
+        <version>3.0.3</version>
+        -->
+
         <!--
         <dependencies>
           <dependency>
@@ -53,7 +53,7 @@
             <phase>generate-sources</phase>
             <configuration>
               <inputSpec>src/main/resources/swagger.yaml</inputSpec>
-              <output>${basedir}</output>
+              <output>${basedir}/src/main/java</output>
               <!--
               <apiPackage>cd.connect.example.api</apiPackage>
               <modelPackage>cd.connect.example.model</modelPackage>

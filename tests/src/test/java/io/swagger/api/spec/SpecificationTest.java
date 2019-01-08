@@ -1,4 +1,4 @@
-package io.wp2.api.spec;
+package io.swagger.api.spec;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;

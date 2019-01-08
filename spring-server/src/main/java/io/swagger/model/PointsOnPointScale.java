@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
+import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
@@ -13,7 +14,8 @@ import javax.validation.constraints.*;
  * How many points an user has on a given point scale
  */
 @ApiModel(description = "How many points an user has on a given point scale")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T14:04:10.019+01:00")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T20:53:35.584+01:00")
 
 public class PointsOnPointScale   {
   @JsonProperty("pointScaleId")
@@ -27,7 +29,7 @@ public class PointsOnPointScale   {
     return this;
   }
 
-   /**
+  /**
    * The point scale
    * @return pointScaleId
   **/
@@ -48,7 +50,7 @@ public class PointsOnPointScale   {
     return this;
   }
 
-   /**
+  /**
    * How many points are on the point scale
    * @return points
   **/
