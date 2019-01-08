@@ -9,33 +9,55 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 /**
- * A badge in an application
+ * EventHashMap
  */
-@ApiModel(description = "A badge in an application")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T14:04:10.019+01:00")
 
-public class Badge   {
-  @JsonProperty("name")
-  private String name = null;
+public class EventHashMap   {
+  @JsonProperty("code")
+  private String code = null;
 
-  public Badge name(String name) {
-    this.name = name;
+  @JsonProperty("text")
+  private String text = null;
+
+  public EventHashMap code(String code) {
+    this.code = code;
     return this;
   }
 
    /**
-   * The name of the badge
-   * @return name
+   * ID
+   * @return code
   **/
-  @ApiModelProperty(value = "The name of the badge")
+  @ApiModelProperty(value = "ID")
 
 
-  public String getName() {
-    return name;
+  public String getCode() {
+    return code;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+  public EventHashMap text(String text) {
+    this.text = text;
+    return this;
+  }
+
+   /**
+   * content
+   * @return text
+  **/
+  @ApiModelProperty(value = "content")
+
+
+  public String getText() {
+    return text;
+  }
+
+  public void setText(String text) {
+    this.text = text;
   }
 
 
@@ -47,21 +69,23 @@ public class Badge   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Badge badge = (Badge) o;
-    return Objects.equals(this.name, badge.name);
+    EventHashMap eventHashMap = (EventHashMap) o;
+    return Objects.equals(this.code, eventHashMap.code) &&
+        Objects.equals(this.text, eventHashMap.text);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(code, text);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Badge {\n");
+    sb.append("class EventHashMap {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("}");
     return sb.toString();
   }

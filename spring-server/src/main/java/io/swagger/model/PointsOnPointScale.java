@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * How many points an user has on a given point scale
  */
 @ApiModel(description = "How many points an user has on a given point scale")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T13:53:40.484+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T14:04:10.019+01:00")
 
 public class PointsOnPointScale   {
   @JsonProperty("pointScaleId")
