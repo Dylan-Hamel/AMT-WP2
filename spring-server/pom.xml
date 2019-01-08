@@ -32,15 +32,16 @@
                         </goals>
                         <configuration>
                             <inputSpec>${basedir}/src/main/resources/swagger.yaml</inputSpec>
+                            <output>${basedir}</output>
                             <language>spring</language>
                             <configOptions>
                                 <useBeanValidation>true</useBeanValidation>
                                 <interfaceOnly>true</interfaceOnly>
                                 <delegatePattern>false</delegatePattern>
-                                <apiPackage>io.wp2.api</apiPackage>
-                                <configPackage>io.wp2.config</configPackage>
-                                <basePackage>io.wp2</basePackage>
-                                <modelPackage>io.wp2.api.model</modelPackage>
+                                <apiPackage>io.swagger.api</apiPackage>
+                                <configPackage>io.swagger.configuration</configPackage>
+                                <basePackage>io.swagger</basePackage>
+                                <modelPackage>io.swagger.model</modelPackage>
                             </configOptions>
                         </configuration>
                     </execution>
