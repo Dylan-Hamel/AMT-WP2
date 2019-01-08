@@ -465,6 +465,16 @@ definitions:
       username:
         type: string
         description: "The username of the user"
+      hashMap:
+        type: object
+        additionalProperties:
+          properties:
+            code:
+              type: string
+              description: "ID"
+            text:
+              type: string
+              description: "content"
 
   User:
     description: "An user doing various actions in an application"

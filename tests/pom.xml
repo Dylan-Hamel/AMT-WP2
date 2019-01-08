@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>io.wp2</groupId>
-  <artifactId>wp2Tests</artifactId>
+  <groupId>io.swagger</groupId>
+  <artifactId>io.swagger</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <properties>
@@ -28,7 +28,8 @@
       <plugin>
         <groupId>io.swagger</groupId>
         <artifactId>swagger-codegen-maven-plugin</artifactId>
-        <version>2.2.3</version>
+        <version>2.3.1</version>
+        <!--
         <dependencies>
           <dependency>
             <groupId>cd.connect.openapi</groupId>
@@ -36,6 +37,7 @@
             <version>1.4</version>
           </dependency>
         </dependencies>
+        -->
         <executions>
           <execution>
             <goals>
@@ -44,6 +46,7 @@
             <phase>generate-sources</phase>
             <configuration>
               <inputSpec>src/main/resources/swagger.yaml</inputSpec>
+              <output>${basedir}</output>
               <!--
               <apiPackage>cd.connect.example.api</apiPackage>
               <modelPackage>cd.connect.example.model</modelPackage>
@@ -57,10 +60,9 @@
               <library>okhttp-gson</library>
               <configOptions>
                 <sourceFolder>.</sourceFolder>
-                <modelPackage>io.wp2.api.dto</modelPackage>
-                <apiPackage>io.wp2.api</apiPackage>
+                <modelPackage>io.swagger.model</modelPackage>
+                <apiPackage>io.swagger.api</apiPackage>
               </configOptions>
-              <output>target/generated-sources/swagger</output>
             </configuration>
           </execution>
         </executions>
@@ -104,6 +106,31 @@
       <version>1.2.5</version>
       <scope>test</scope>
     </dependency>
+    <!--
+    <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>2.3.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-junit</artifactId>
+      <version>2.3.1</version>
+      <scope>test</scope>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-picocontainer</artifactId>
+      <version>2.3.1</version>
+      <scope>test</scope>
+    </dependency>
+      <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>gherkin</artifactId>
+      <version>6.0.14</version>
+    </dependency>
+    -->
     <dependency>
       <groupId>org.subethamail</groupId>
       <artifactId>subethasmtp</artifactId>
