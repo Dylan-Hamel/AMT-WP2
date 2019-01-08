@@ -24,6 +24,13 @@
         <filtering>true</filtering>
       </testResource>
     </testResources>
+    <!--
+    <dependency>
+      <groupId>io.swagger.codegen.v3</groupId>
+      <artifactId>swagger-codegen</artifactId>
+      <version>3.0.3</version>
+    </dependency>
+  -->
     <plugins>
       <plugin>
         <groupId>io.swagger</groupId>
