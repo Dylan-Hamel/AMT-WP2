@@ -16,7 +16,7 @@ import javax.validation.constraints.*;
  * An user doing various actions in an application
  */
 @ApiModel(description = "An user doing various actions in an application")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T13:53:40.484+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T14:04:10.019+01:00")
 
 public class User   {
   @JsonProperty("username")

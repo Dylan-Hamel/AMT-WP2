@@ -12,7 +12,7 @@ import javax.validation.constraints.*;
  * The info of a gamified application
  */
 @ApiModel(description = "The info of a gamified application")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T13:53:40.484+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T14:04:10.019+01:00")
 
 public class GamifiedApplication   {
   @JsonProperty("name")

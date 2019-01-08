@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * A rule applied on point scale change
  */
 @ApiModel(description = "A rule applied on point scale change")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T13:53:40.484+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T14:04:10.019+01:00")
 
 public class TriggerRule   {
   @JsonProperty("name")

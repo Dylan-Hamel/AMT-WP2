@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
  * A rule applied on event creation
  */
 @ApiModel(description = "A rule applied on event creation")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T13:53:40.484+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-08T14:04:10.019+01:00")
 
 public class EventRule   {
   @JsonProperty("name")
