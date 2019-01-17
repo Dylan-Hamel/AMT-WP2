@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Objects;
 
 import ch.heig.amt.api.model.Badge;
+import ch.heig.amt.api.model.PointScale;
+import ch.heig.amt.api.model.Rule;
+import ch.heig.amt.api.model.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -18,6 +21,7 @@ import javax.persistence.*;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-10T06:54:30.522+01:00")
 @Entity
+@Table(name = "application")
 public class ApplicationEntity {
 
   @Id
@@ -34,12 +38,21 @@ public class ApplicationEntity {
   @JsonProperty("token")
   private String token = null;
 
-  @OneToMany(fetch = FetchType.LAZY, targetEntity = BadgeEntity.class)
-  @JoinColumn(name = "badge_id", nullable = false)
-  private List<Badge> badge;
+  @OneToMany(fetch = FetchType.LAZY, targetEntity = Badge.class, mappedBy = "application")
+  // @JoinColumn(name = "badge_id", nullable = false)
+  private List<Badge> badges;
+
+  @OneToMany(fetch = FetchType.LAZY, targetEntity = UserEntity.class, mappedBy = "application")
+  private List<User> users;
   // @JoinColumn(name = "user_id", nullable = false)
+
+  @OneToMany(fetch = FetchType.LAZY, targetEntity = UserEntity.class, mappedBy = "application")
+  private List<PointScale> pointScales;
   // @JoinColumn(name = "point_scale_id", nullable = false)
   // @JoinColumn(name = "rule_id", nullable = false)
+
+  @OneToMany(fetch = FetchType.LAZY, targetEntity = UserEntity.class, mappedBy = "application")
+  private List<Rule> rules;
 
   public ApplicationEntity name(String name) {
     this.name = name;
