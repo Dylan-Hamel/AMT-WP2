@@ -1,0 +1,410 @@
+swagger: '2.0'
+info:
+  version: '0.1.1'
+  title: AMT
+  description: Gamification App
+host: localhost:8080
+basePath: /api
+schemes:
+  - http
+paths:
+  /register:
+    post:
+      summary: "Register an application"
+      parameters:
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/Application"
+      responses:
+        201:
+          description: "Successfully done"
+        409:
+          description: "Name already taken"
+
+  /users:
+    get:
+      summary: "List all users linked to current application"
+      description: "List all users linked to current application"
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/User"
+      security:
+        - basicAuth: []
+  /users/{id}:
+    get:
+      summary: "Fetch specific user"
+      parameters:
+        - name: id
+          in: path
+          description: "User ID"
+          required: true
+          type: string
+      security:
+        - basicAuth: []
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            $ref: "#/definitions/User"
+        404:
+          description: "No such user"
+
+  /events:
+    post:
+      summary: "Create an event"
+      description: "Create event triggered by user action for a given application"
+      parameters:
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/Event"
+      security:
+        - basicAuth: []
+      responses:
+        201:
+          description: "Successfully done"
+
+  /badges:
+    get:
+      summary: "List all badges linked to current application"
+      security:
+        - basicAuth: []
+      responses:
+        200:
+          description: "Successfully"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Badge"
+    post:
+      summary: "Create new badge"
+      parameters:
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/Badge"
+      security:
+        - basicAuth: []
+      responses:
+        201:
+          description: "Successfully done"
+          headers:
+            Location:
+              description: "URI of newly created object"
+              type: string
+        409:
+          description: "Badge already exists"
+
+    delete:
+      summary: "Deletes specific badge"
+      parameters:
+        - name: name
+          in: path
+          description: "Badge name"
+          required: true
+          type: string
+      security:
+        - basicAuth: []
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such badge"
+
+  /pointScales:
+    get:
+      summary: "List point scales linked to current application"
+      security:
+        - basicAuth: []
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/PointScale"
+    post:
+      summary: "Create point scale"
+      parameters:
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/PointScale"
+      security:
+        - basicAuth: []
+      responses:
+        201:
+          description: "Successfully done"
+          headers:
+            Location:
+              description: "URI of newly created object"
+              type: string
+        409:
+          description: "Point scale already existing"
+  /pointScales/{name}:
+    get:
+      summary: "Fetch specific point scale"
+      parameters:
+        - name: name
+          in: path
+          description: "Point scale name"
+          required: true
+          type: string
+      security:
+        - basicAuth: []
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/PointScale"
+        404:
+          description: "No such point scale"
+    post:
+      summary: "Update specific point scale"
+      parameters:
+        - name: name
+          in: path
+          description: "Point scale name"
+          required: true
+          type: string
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/PointScale"
+      security:
+        - basicAuth: []
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such point scale"
+        409:
+          description: "Point scale already exists"
+    delete:
+      summary: "Deletes specific point scale"
+      parameters:
+        - name: name
+          in: path
+          description: "Point scale name"
+          required: true
+          type: string
+      security:
+        - basicAuth: []
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such point scale"
+
+  /rules/:
+    get:
+      summary: "List events rules linked to current application"
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Rule"
+      security:
+        - basicAuth: []
+    post:
+      summary: "Create a new event rule"
+      parameters:
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/Rule"
+      security:
+        - basicAuth: []
+      responses:
+        201:
+          description: "Successfully done"
+          headers:
+            Location:
+              description: "URI of newly created object"
+              type: string
+        404:
+          description: "No such event rule"
+        409:
+          description: "Event rule already exists"
+  /rules/{name}:
+    get:
+      summary: "Fetch specific event rule"
+      parameters:
+        - name: name
+          in: path
+          description: "Event rule name"
+          required: true
+          type: string
+      security:
+        - basicAuth: []
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            $ref: "#/definitions/Rule"
+        404:
+          description: "No such event rule"
+    post:
+      summary: "Update specific event rule"
+      parameters:
+        - name: name
+          in: path
+          description: "Event rule name"
+          required: true
+          type: string
+        - name: body
+          in: body
+          description: "URL of the modified event rule"
+          required: true
+          schema:
+            $ref: "#/definitions/Rule"
+      security:
+        - basicAuth: []
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such event rule"
+        409:
+          description: "Event rule already exists"
+    delete:
+      summary: "Delete specific event rule"
+      parameters:
+        - name: name
+          in: path
+          description: "Event rule name"
+          required: true
+          type: string
+      security:
+        - basicAuth: []
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such event rule"
+
+securityDefinitions:
+  basicAuth:
+    type: basic
+
+responses:
+  UnauthorizedError:
+    description: Authentication information is missing or invalid
+    headers:
+      auth:
+        type: string
+
+definitions:
+  User:
+    description: "An user doing various actions in an application"
+    type: object
+    properties:
+      username:
+        type: string
+        description: "The username of the user"
+      password:
+        type: string
+        description: "Username password"
+
+  Application:
+    description: "The info of a gamified application"
+    type: object
+    properties:
+      id:
+        type: integer
+        description: "Application ID"
+      name:
+        type: string
+        description: "The unique name of the gamified application"
+      token:
+        type: string
+        description: "The token of the gamified application"
+
+  PointAward:
+    description: "How many points an user has on a given point scale"
+    type: object
+    properties:
+      pointAwardId:
+        type: integer
+        description: "Point Award ID"
+      points:
+        type: number
+        description: "How many points are on the point scale"
+
+  PointScale:
+    description: "A point scale in an application"
+    type: object
+    properties:
+      id:
+        type: integer
+        description: "Point Scale ID"
+      name:
+        type: string
+        description: "The name of the point scale"
+
+  Event:
+    description: "An event created when an user does something on the application"
+    type: object
+    properties:
+      id:
+        type: integer
+        description: "Event ID"
+      type:
+        type: string
+        description: "The type of the event"
+      hashMap:
+        type: object
+        additionalProperties:
+          properties:
+            key:
+              type: string
+              description: "Clé"
+            value:
+              type: string
+              description: "Valeur"
+
+  Badge:
+    description: "A badge in an application"
+    type: object
+    properties:
+      id:
+        type: integer
+        description: "Badge ID"
+      name:
+        type: string
+        description: "The name of the badge"
+
+  Rule:
+    description: "Rule"
+    type: object
+    properties:
+      id:
+        type: integer
+        description: "Rule ID"
+      name:
+        type: string
+        description: "Rule name"
+      threshold:
+        type: integer
+        description: "Treshold"
