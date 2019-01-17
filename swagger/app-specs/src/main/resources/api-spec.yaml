@@ -1,0 +1,107 @@
+swagger: '2.0'
+info:
+  version: '0.1.0'
+  title: AMT
+  description: AMT - TE No 2
+host: localhost:8080
+basePath: /api
+schemes:
+  - http
+paths:
+  /messages:
+    post:
+      description: send a new message
+      operationId: createMessage
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: message
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Message'
+      security:
+        - basicAuth: []
+      responses:
+        '201':
+          description: message successfully created
+          headers:
+            newMessageID:
+              description: new message ID
+              type: integer
+        '401':
+          $ref: '#/responses/UnauthorizedError'
+        '404':
+          description: Not found
+    get:
+      description: get oldest message
+      operationId: getMessage
+      produces:
+        - application/json
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: Fetch sucessful
+          schema:
+            $ref: '#/definitions/Message'
+        '401':
+          description: Unauthorized request
+        '404':
+          description: Not found
+
+  /users:
+    post:
+      description: create a new user
+      operationId: createUser
+      consumes:
+        - application/json
+      parameters:
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '201':
+          description: created
+          schema:
+            type: object
+        '400':
+          description: login & password should have at least 3 caracters
+        '409':
+          description: This login already exists
+
+securityDefinitions:
+  basicAuth:
+    type: basic
+
+responses:
+  UnauthorizedError:
+    description: Authentication information is missing or invalid
+    headers:
+      auth:
+        type: string
+
+definitions:
+  User:
+    type: object
+    properties:
+      login:
+        type: string
+        minLength: 3
+      pass:
+        type: string
+        minLength: 3
+
+  Message:
+    type: object
+    properties:
+      sender:
+        type: string
+      recipient:
+        type: string
+      body:
+        type: string
