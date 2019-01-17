@@ -31,6 +31,7 @@ public class BadgeEntity {
   private String name = null;
 
   @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "application_id", nullable = false)
   private ApplicationEntity applicationEntity;
 
   public BadgeEntity id(Integer id) {
