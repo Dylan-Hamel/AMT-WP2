@@ -7,6 +7,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
 import java.util.Map;
+
+import org.hibernate.annotations.Cascade;
 import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.*;
@@ -21,7 +23,7 @@ public class EventEntity   {
   private Long id = null;
   private String type = null;
 
-  @ManyToOne
+  @ManyToOne(cascade = CascadeType.PERSIST)
   private UserEntity userEntity;
 
   @OneToMany(mappedBy = "eventEntity")
@@ -47,6 +49,14 @@ public class EventEntity   {
 
   public void setType(String type) {
     this.type = type;
+  }
+
+  public UserEntity getUserEntity() {
+    return userEntity;
+  }
+
+  public void setUserEntity(UserEntity userEntity) {
+    this.userEntity = userEntity;
   }
 }
 

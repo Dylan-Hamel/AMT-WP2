@@ -16,3 +16,5 @@ SET time_zone = "+00:00";
 
 DROP DATABASE IF EXISTS `AMT_WP2`;
 CREATE DATABASE `AMT_WP2`;
+USE `AMT_WP2`;
+INSERT INTO application (`id`, `name`, `token`) VALUES(NULL, "Stack Overflow", "token");

@@ -10,8 +10,9 @@ import java.util.List;
 @Controller
 public class UsersApiController implements UsersApi {
 
+
     @Override
-    public ResponseEntity<List<UserDTO>> usersGet() {
+    public ResponseEntity<List<UserDTO>> usersGet(String xGamificationToken) {
         return null;
     }
 
