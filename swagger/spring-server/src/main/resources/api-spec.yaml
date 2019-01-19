@@ -12,12 +12,13 @@ paths:
     post:
       summary: "Register an application"
       parameters:
+        - $ref: '#/parameters/Token'
         - name: body
           in: body
           description: "Required informations"
           required: true
           schema:
-            $ref: "#/definitions/Application"
+            $ref: "#/definitions/ApplicationDTO"
       responses:
         201:
           description: "Successfully done"
@@ -34,25 +35,22 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/User"
-      security:
-        - basicAuth: []
+              $ref: "#/definitions/UserDTO"
   /users/{id}:
     get:
       summary: "Fetch specific user"
       parameters:
+        - $ref: '#/parameters/Token'
         - name: id
           in: path
           description: "User ID"
           required: true
           type: string
-      security:
-        - basicAuth: []
       responses:
         200:
           description: "Successfully done"
           schema:
-            $ref: "#/definitions/User"
+            $ref: "#/definitions/UserDTO"
         404:
           description: "No such user"
 
@@ -61,14 +59,13 @@ paths:
       summary: "Create an event"
       description: "Create event triggered by user action for a given application"
       parameters:
+        - $ref: '#/parameters/Token'
         - name: body
           in: body
           description: "Required informations"
           required: true
           schema:
-            $ref: "#/definitions/Event"
-      security:
-        - basicAuth: []
+            $ref: "#/definitions/EventDTO"
       responses:
         201:
           description: "Successfully done"
@@ -76,26 +73,25 @@ paths:
   /badges:
     get:
       summary: "List all badges linked to current application"
-      security:
-        - basicAuth: []
+      parameters:
+        - $ref: '#/parameters/Token'
       responses:
         200:
           description: "Successfully"
           schema:
             type: array
             items:
-              $ref: "#/definitions/Badge"
+              $ref: "#/definitions/BadgeDTO"
     post:
       summary: "Create new badge"
       parameters:
+        - $ref: '#/parameters/Token'
         - name: body
           in: body
           description: "Required informations"
           required: true
           schema:
-            $ref: "#/definitions/Badge"
-      security:
-        - basicAuth: []
+            $ref: "#/definitions/BadgeDTO"
       responses:
         201:
           description: "Successfully done"
@@ -109,13 +105,12 @@ paths:
     delete:
       summary: "Deletes specific badge"
       parameters:
+        - $ref: '#/parameters/Token'
         - name: name
           in: path
           description: "Badge name"
           required: true
           type: string
-      security:
-        - basicAuth: []
       responses:
         200:
           description: "Successfully done"
@@ -125,26 +120,25 @@ paths:
   /pointScales:
     get:
       summary: "List point scales linked to current application"
-      security:
-        - basicAuth: []
+      parameters:
+        - $ref: '#/parameters/Token'
       responses:
         200:
           description: "Successfully done"
           schema:
             type: array
             items:
-              $ref: "#/definitions/PointScale"
+              $ref: "#/definitions/PointScaleDTO"
     post:
       summary: "Create point scale"
       parameters:
+        - $ref: '#/parameters/Token'
         - name: body
           in: body
           description: "Required informations"
           required: true
           schema:
-            $ref: "#/definitions/PointScale"
-      security:
-        - basicAuth: []
+            $ref: "#/definitions/PointScaleDTO"
       responses:
         201:
           description: "Successfully done"
@@ -158,25 +152,25 @@ paths:
     get:
       summary: "Fetch specific point scale"
       parameters:
+        - $ref: '#/parameters/Token'
         - name: name
           in: path
           description: "Point scale name"
           required: true
           type: string
-      security:
-        - basicAuth: []
       responses:
         200:
           description: "Successfully done"
           schema:
             type: array
             items:
-              $ref: "#/definitions/PointScale"
+              $ref: "#/definitions/PointScaleDTO"
         404:
           description: "No such point scale"
     post:
       summary: "Update specific point scale"
       parameters:
+        - $ref: '#/parameters/Token'
         - name: name
           in: path
           description: "Point scale name"
@@ -187,9 +181,7 @@ paths:
           description: "Required informations"
           required: true
           schema:
-            $ref: "#/definitions/PointScale"
-      security:
-        - basicAuth: []
+            $ref: "#/definitions/PointScaleDTO"
       responses:
         200:
           description: "Successfully done"
@@ -200,13 +192,12 @@ paths:
     delete:
       summary: "Deletes specific point scale"
       parameters:
+        - $ref: '#/parameters/Token'
         - name: name
           in: path
           description: "Point scale name"
           required: true
           type: string
-      security:
-        - basicAuth: []
       responses:
         200:
           description: "Successfully done"
@@ -216,26 +207,25 @@ paths:
   /rules/:
     get:
       summary: "List events rules linked to current application"
+      parameters:
+        - $ref: '#/parameters/Token'
       responses:
         200:
           description: "Successfully done"
           schema:
             type: array
             items:
-              $ref: "#/definitions/Rule"
-      security:
-        - basicAuth: []
+              $ref: "#/definitions/RuleDTO"
     post:
       summary: "Create a new event rule"
       parameters:
+        - $ref: '#/parameters/Token'
         - name: body
           in: body
           description: "Required informations"
           required: true
           schema:
-            $ref: "#/definitions/Rule"
-      security:
-        - basicAuth: []
+            $ref: "#/definitions/RuleDTO"
       responses:
         201:
           description: "Successfully done"
@@ -251,23 +241,23 @@ paths:
     get:
       summary: "Fetch specific event rule"
       parameters:
+        - $ref: '#/parameters/Token'
         - name: name
           in: path
           description: "Event rule name"
           required: true
           type: string
-      security:
-        - basicAuth: []
       responses:
         200:
           description: "Successfully done"
           schema:
-            $ref: "#/definitions/Rule"
+            $ref: "#/definitions/RuleDTO"
         404:
           description: "No such event rule"
     post:
       summary: "Update specific event rule"
       parameters:
+        - $ref: '#/parameters/Token'
         - name: name
           in: path
           description: "Event rule name"
@@ -278,9 +268,7 @@ paths:
           description: "URL of the modified event rule"
           required: true
           schema:
-            $ref: "#/definitions/Rule"
-      security:
-        - basicAuth: []
+            $ref: "#/definitions/RuleDTO"
       responses:
         200:
           description: "Successfully done"
@@ -291,22 +279,25 @@ paths:
     delete:
       summary: "Delete specific event rule"
       parameters:
+        - $ref: '#/parameters/Token'
         - name: name
           in: path
           description: "Event rule name"
           required: true
           type: string
-      security:
-        - basicAuth: []
       responses:
         200:
           description: "Successfully done"
         404:
           description: "No such event rule"
 
-securityDefinitions:
-  basicAuth:
-    type: basic
+parameters:
+  Token:
+    description: "Token Auth"
+    name: "X-Gamification-Token"
+    in: header
+    required: true
+    type: string
 
 responses:
   UnauthorizedError:
@@ -316,7 +307,7 @@ responses:
         type: string
 
 definitions:
-  User:
+  UserDTO:
     description: "An user doing various actions in an application"
     type: object
     properties:
@@ -327,7 +318,7 @@ definitions:
         type: string
         description: "Username password"
 
-  Application:
+  ApplicationDTO:
     description: "The info of a gamified application"
     type: object
     properties:
@@ -341,7 +332,7 @@ definitions:
         type: string
         description: "The token of the gamified application"
 
-  PointAward:
+  PointAwardDTO:
     description: "How many points an user has on a given point scale"
     type: object
     properties:
@@ -352,7 +343,7 @@ definitions:
         type: number
         description: "How many points are on the point scale"
 
-  PointScale:
+  PointScaleDTO:
     description: "A point scale in an application"
     type: object
     properties:
@@ -363,7 +354,7 @@ definitions:
         type: string
         description: "The name of the point scale"
 
-  Event:
+  EventDTO:
     description: "An event created when an user does something on the application"
     type: object
     properties:
@@ -384,7 +375,7 @@ definitions:
               type: string
               description: "Valeur"
 
-  Badge:
+  BadgeDTO:
     description: "A badge in an application"
     type: object
     properties:
@@ -395,7 +386,7 @@ definitions:
         type: string
         description: "The name of the badge"
 
-  Rule:
+  RuleDTO:
     description: "Rule"
     type: object
     properties:

@@ -14,9 +14,5 @@ SET time_zone = "+00:00";
 -- Database: `AMT-DB`
 --
 
--- DROP DATABASE `AMT-DB`;
--- CREATE DATABASE `AMT-DB`;
--- USE `AMT-DB`;
-
--- --------------------------------------------------------
-
+DROP DATABASE IF EXISTS `AMT_WP2`;
+CREATE DATABASE `AMT_WP2`;
