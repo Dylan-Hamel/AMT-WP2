@@ -21,9 +21,10 @@ public class PointScalesApiController implements PointScalesApi {
     }
 
     @Override
-    public ResponseEntity<List<PointScaleDTO>> pointScalesNameGet(String xGamificationToken, String name) {
+    public ResponseEntity<PointScaleDTO> pointScalesNameGet(String xGamificationToken, String name) {
         return null;
     }
+
 
     @Override
     public ResponseEntity<Void> pointScalesNamePost(String xGamificationToken, String name, PointScaleDTO body) {
