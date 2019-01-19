@@ -10,7 +10,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = "ch.heig.lachaize")
 public class Swagger2SpringBoot implements CommandLineRunner {
 
 	@Override
