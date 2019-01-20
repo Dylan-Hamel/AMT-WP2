@@ -6,12 +6,15 @@ import ch.heig.amt.entities.ApplicationEntity;
 import ch.heig.amt.entities.BadgeEntity;
 import ch.heig.amt.repositories.ApplicationRepository;
 import ch.heig.amt.repositories.BadgeRepository;
+import io.swagger.models.auth.In;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-17T18:45:54.991+01:00")
@@ -27,30 +30,6 @@ public class BadgesApiController implements BadgesApi {
     }
 
     @Override
-    public ResponseEntity<Void> badgesDelete(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, Integer id) {
-
-        // Check auth is allowed to post event
-        ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
-        if (applicationEntity == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-        }
-
-        Long lid = Long.valueOf(id.longValue());
-
-        String sID = String.valueOf(id);
-        BadgeEntity badgeEntity = badgeRepository.findByIdAndApplicationEntity(sID, applicationEntity);
-
-        if (badgeEntity == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-
-        // Find matching badge & delete it
-        badgeRepository.delete(lid);
-
-        return ResponseEntity.status(HttpStatus.OK).build();
-    }
-
-    @Override
     public ResponseEntity<List<BadgeDTO>> badgesGet(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken) {
 
         // Check user is allowed to post event
@@ -60,17 +39,42 @@ public class BadgesApiController implements BadgesApi {
         }
 
         // Fetch list of badges
-        Iterable<BadgeEntity> badgeEntities = this.badgeRepository.findAll();
-        List<BadgeDTO> badgeDTOS = null;
+        Iterable<BadgeEntity> badgeEntities = this.badgeRepository.findAllByApplicationEntity(applicationEntity);
+        List<BadgeDTO> badgeDTOS = new ArrayList<>();
         for (BadgeEntity badgeEntity: badgeEntities) {
             badgeDTOS.add(toBadgeDTO(badgeEntity));
         }
 
-        return new ResponseEntity(badgeDTOS, HttpStatus.OK);
+        return ResponseEntity.ok(badgeDTOS);
+    }
+
+
+    @Override
+    public ResponseEntity<Void> badgesIdDelete(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken,
+                                               @PathVariable("id") Integer id) {
+
+        // Check auth is allowed to post event
+        ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
+        if (applicationEntity == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        BadgeEntity badgeEntity = badgeRepository.findByIdAndApplicationEntity(id, applicationEntity);
+
+        if (badgeEntity == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
+        // Find matching badge & delete it
+        badgeRepository.delete(badgeEntity);
+
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @Override
-    public ResponseEntity<Void> badgesIdPut(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, String id, @RequestBody BadgeDTO body) {
+    public ResponseEntity<Void> badgesIdPut(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken,
+                                            @PathVariable("id") Integer id,
+                                            @RequestBody BadgeDTO body) {
 
         // Check app is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -78,10 +82,6 @@ public class BadgesApiController implements BadgesApi {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
-        if(applicationEntity == null) {
-            // app not found
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-        }
 
         BadgeEntity badgeEntity = this.badgeRepository.findByIdAndApplicationEntity(id, applicationEntity);
 
@@ -100,7 +100,8 @@ public class BadgesApiController implements BadgesApi {
     }
 
     @Override
-    public ResponseEntity<Void> badgesPost(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, @RequestBody BadgeDTO body) {
+    public ResponseEntity<Void> badgesPost(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken,
+                                           @RequestBody BadgeDTO body) {
 
         // Check user is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);

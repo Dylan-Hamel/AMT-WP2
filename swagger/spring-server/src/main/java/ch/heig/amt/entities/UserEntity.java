@@ -1,6 +1,7 @@
 package ch.heig.amt.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -28,6 +29,10 @@ public class UserEntity {
   public UserEntity username(String username) {
     this.username = username;
     return this;
+  }
+
+  public UserEntity() {
+    this.badgeEntities = new ArrayList<>();
   }
 
   public String getUsername() {

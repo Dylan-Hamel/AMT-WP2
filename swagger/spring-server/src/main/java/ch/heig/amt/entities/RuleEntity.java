@@ -16,6 +16,8 @@ public class RuleEntity {
 
   private Integer threshold;
   private String name = null;
+  private String type;
+
 
   @ManyToOne
   private PointScaleEntity pointScaleEntity;
@@ -26,12 +28,14 @@ public class RuleEntity {
   @OneToMany(mappedBy = "ruleEntity")
   private List<PointAwardEntity> pointAwardEntities;
 
-  @OneToMany(mappedBy = "ruleEntity")
-  private List<PointAwardEntity> pointAwardEntity;
 
   public RuleEntity name(String name) {
     this.name = name;
     return this;
+  }
+
+  public int getId() {
+    return id;
   }
 
   public Integer getThreshold() {
@@ -74,12 +78,12 @@ public class RuleEntity {
     this.pointAwardEntities = pointAwardEntities;
   }
 
-  public List<PointAwardEntity> getPointAwardEntity() {
-    return pointAwardEntity;
+  public String getType() {
+    return type;
   }
 
-  public void setPointAwardEntity(List<PointAwardEntity> pointAwardEntity) {
-    this.pointAwardEntity = pointAwardEntity;
+  public void setType(String type) {
+    this.type = type;
   }
 }
 

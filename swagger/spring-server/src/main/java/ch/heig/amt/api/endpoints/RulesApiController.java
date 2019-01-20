@@ -1,20 +1,25 @@
 package ch.heig.amt.api.endpoints;
 
 import ch.heig.amt.api.RulesApi;
-import ch.heig.amt.api.model.RuleDTO;
+import ch.heig.amt.api.model.*;
 
-import ch.heig.amt.api.model.RuleResponseDTO;
 import ch.heig.amt.entities.ApplicationEntity;
+import ch.heig.amt.entities.BadgeEntity;
+import ch.heig.amt.entities.PointScaleEntity;
 import ch.heig.amt.entities.RuleEntity;
 import ch.heig.amt.repositories.ApplicationRepository;
+import ch.heig.amt.repositories.BadgeRepository;
+import ch.heig.amt.repositories.PointScaleRepository;
 import ch.heig.amt.repositories.RuleRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 
+import javax.xml.ws.Response;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,11 +28,18 @@ import java.util.List;
 public class RulesApiController implements RulesApi {
 
     private RuleRepository ruleRepository;
+    private PointScaleRepository pointScaleRepository;
+    private BadgeRepository badgeRepository;
     private ApplicationRepository applicationRepository;
 
-    public RulesApiController(RuleRepository ruleRepository, ApplicationRepository applicationRepository) {
+    public RulesApiController(RuleRepository ruleRepository,
+                              ApplicationRepository applicationRepository,
+                              BadgeRepository badgeRepository,
+                              PointScaleRepository pointScaleRepository) {
         this.ruleRepository = ruleRepository;
         this.applicationRepository = applicationRepository;
+        this.badgeRepository = badgeRepository;
+        this.pointScaleRepository = pointScaleRepository;
     }
 
 
@@ -39,19 +51,19 @@ public class RulesApiController implements RulesApi {
         if (applicationEntity == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
+        Iterable<RuleEntity> all = ruleRepository.findAllByBadgeEntity_ApplicationEntity(applicationEntity);
 
-        Iterable<RuleEntity> all = ruleRepository.findAll();
-        List<RuleDTO> ruleDTOS = new ArrayList<>();
+        List<RuleResponseDTO> ruleDTOS = new ArrayList<>();
         for (RuleEntity r: all) {
-            ruleDTOS.add(toRuleDTO(r));
+            ruleDTOS.add(toRuleResponseDTO(r));
         }
 
-        // return new ResponseEntity<>(ruleDTOS, HttpStatus.HTTP_VERSION_NOT_SUPPORTED)
-        return null;
+        return ResponseEntity.ok(ruleDTOS);
     }
 
     @Override
-    public ResponseEntity<Void> rulesIdDelete(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, Integer id) {
+    public ResponseEntity<Void> rulesIdDelete(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken,
+                                              @PathVariable("id") Integer id) {
 
         // Check user is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -59,20 +71,20 @@ public class RulesApiController implements RulesApi {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
-        Long lid = Long.valueOf(id.longValue());
-        RuleEntity one = ruleRepository.findOne(lid);
+        RuleEntity one = ruleRepository.findAllByIdAndBadgeEntity_ApplicationEntity(id, applicationEntity);
 
         if (one == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ResponseEntity.notFound().build();
         }
 
-        ruleRepository.delete(lid);
+        ruleRepository.delete(one);
 
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @Override
-    public ResponseEntity<RuleDTO> rulesIdGet(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, Integer id) {
+    public ResponseEntity<RuleResponseDTO> rulesIdGet(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken,
+                                              @PathVariable("id") Integer id) {
 
         // Check user is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -80,20 +92,21 @@ public class RulesApiController implements RulesApi {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
-        Long lid = Long.valueOf(id.longValue());
-        RuleEntity ruleEntity = ruleRepository.findOne(lid);
+        RuleEntity ruleEntity = ruleRepository.findAllByIdAndBadgeEntity_ApplicationEntity(id, applicationEntity);
 
         if (ruleEntity == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ResponseEntity.notFound().build();
         }
 
-        RuleDTO ruleDTO = toRuleDTO(ruleEntity);
+        RuleResponseDTO ruleDTO = toRuleResponseDTO(ruleEntity);
 
-        return new ResponseEntity<>(ruleDTO, HttpStatus.OK);
+        return ResponseEntity.ok(ruleDTO);
     }
 
     @Override
-    public ResponseEntity<Void> rulesIdPut(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, Integer id, RuleDTO body) {
+    public ResponseEntity<Void> rulesIdPut(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken,
+                                           @PathVariable("id") Integer id,
+                                           @RequestBody RuleDTO body) {
 
         // Check user is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -101,25 +114,38 @@ public class RulesApiController implements RulesApi {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
-        Long lid = Long.valueOf(id.longValue());
-        RuleEntity ruleEntity = ruleRepository.findOne(lid);
+        RuleEntity ruleEntity = ruleRepository.findAllByIdAndBadgeEntity_ApplicationEntity(id, applicationEntity);
+
+        // Update DTO attributes
+        ruleEntity.setName(body.getName());
+        ruleEntity.setThreshold(body.getThreshold());
+        this.ruleRepository.save(ruleEntity);
 
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @Override
-    public ResponseEntity<Void> rulesPost(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, @RequestBody RuleDTO body) {
+    public ResponseEntity<Void> rulesPost(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken,
+                                          @RequestBody RuleDTO body) {
 
-        // Check user is allowed to post event
+        // Check app is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
         if (applicationEntity == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
+        PointScaleEntity pointScale = this.pointScaleRepository.findPointScaleEntitiesByApplicationEntityAndId(applicationEntity, body.getPointScaleId());
+        BadgeEntity badge = this.badgeRepository.findByIdAndApplicationEntity(body.getBadgeId(), applicationEntity);
+
+        if(badge == null || pointScale == null)
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+
         RuleEntity ruleEntity = toRuleEntity(body);
+        ruleEntity.setBadgeEntity(badge);
+        ruleEntity.setPointScaleEntity(pointScale);
         ruleRepository.save(ruleEntity);
 
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return ResponseEntity.status(HttpStatus.CREATED).header("newId", String.valueOf(ruleEntity.getId())).build();
     }
 
     public RuleEntity toRuleEntity(RuleDTO ruleDTO) {
@@ -138,5 +164,30 @@ public class RulesApiController implements RulesApi {
         ruleDTO.setThreshold(ruleEntity.getThreshold());
 
         return ruleDTO;
+    }
+
+    public RuleResponseDTO toRuleResponseDTO(RuleEntity ruleEntity) {
+        RuleResponseDTO ruleResponseDTO = new RuleResponseDTO();
+        ruleResponseDTO.setName(ruleEntity.getName());
+        ruleResponseDTO.setType(ruleEntity.getType());
+        ruleResponseDTO.setQuantity(ruleEntity.getThreshold());
+        ruleResponseDTO.setBadge(this.toBadgeDTO(ruleEntity.getBadgeEntity()));
+        ruleResponseDTO.setPointScale(this.toPointScaleDTO(ruleEntity.getPointScaleEntity()));
+        return ruleResponseDTO;
+    }
+
+    public BadgeDTO toBadgeDTO(BadgeEntity badgeEntity) {
+
+        BadgeDTO badgeDTO = new BadgeDTO();
+        badgeDTO.setName(badgeEntity.getName());
+
+        return badgeDTO;
+    }
+
+    public PointScaleDTO toPointScaleDTO(PointScaleEntity pointScaleEntity) {
+        PointScaleDTO pointScaleDTO = new PointScaleDTO();
+        pointScaleDTO.setName(pointScaleEntity.getName());
+
+        return pointScaleDTO;
     }
 }

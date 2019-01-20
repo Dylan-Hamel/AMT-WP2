@@ -9,9 +9,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PointScaleRepository extends CrudRepository<PointScaleEntity, Long> {
+public interface PointScaleRepository extends CrudRepository<PointScaleEntity, Integer> {
 
-    PointScaleEntity findPointScaleEntitiesByName(String name);
+    PointScaleEntity findPointScaleEntitiesByApplicationEntityAndId(ApplicationEntity application, Integer id);
     List<PointScaleEntity> findPointScaleEntitiesByApplicationEntity(ApplicationEntity applicationEntity);
-    boolean existsByName(String name);
 }

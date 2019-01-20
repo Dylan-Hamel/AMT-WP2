@@ -41,7 +41,7 @@ public class UsersApiController implements UsersApi {
 
         if (applicationEntity == null) {
             // Application doesn't exist
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
         List<UserEntity> userEntities = userRepository.findAllByApplicationEntity(applicationEntity);
@@ -57,21 +57,8 @@ public class UsersApiController implements UsersApi {
         BadgeDTO badgeDTO = new BadgeDTO();
 
         for (int i = 0; i < userEntities.size(); i++) {
-
-            // Set EntityName in DTOName
-            userDTO.setUsername(userEntities.get(i).getUsername());
-
-            // Create list of badges from Entity
-            for (int j = 0; i < userEntities.get(i).getBadgeEntities().size(); j++) {
-                badgeDTO.setName(userEntities.get(i).getBadgeEntities().get(j).getName());
-                badgeDTOS.add(badgeDTO);
-            }
-
-            // Set EntityBadge In DTOBadge
-            userDTO.setBadges(badgeDTOS);
-
             // Add DTO
-            userDTOS.add(userDTO);
+            userDTOS.add(this.toUserDTO(userEntities.get(i)));
         }
 
         return new ResponseEntity<>(userDTOS, HttpStatus.OK);
@@ -85,11 +72,11 @@ public class UsersApiController implements UsersApi {
 
         if (applicationEntity == null) {
             // Application doesn't exist
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
         Long lid = Long.valueOf(id.longValue());
-        UserEntity userEntity = userRepository.findUserEntityById(lid);
+        UserEntity userEntity = userRepository.findUserEntityByApplicationEntityAndId(applicationEntity, lid);
 
         if (userEntity == null) {
             // User doesn't exist

@@ -97,10 +97,25 @@ paths:
         409:
           description: "Badge already exists"
 
-    delete:
-      summary: "Deletes specific badge"
+  /badges/{id}:
+    put:
+      summary: "Update a given badge"
       consumes:
         - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: id
+          in: path
+          required: true
+          type: integer
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/BadgeDTO'
+
+    delete:
+      summary: "Deletes specific badge"
       parameters:
         - $ref: '#/parameters/Token'
         - name: id
@@ -113,22 +128,6 @@ paths:
           description: "Successfully done"
         404:
           description: "No such badge"
-
-  /badges/{id}:
-    put:
-      summary: "Update a given badge"
-      consumes:
-        - application/json
-      parameters:
-        - $ref: '#/parameters/Token'
-        - name: id
-          in: path
-          required: true
-        - name: body
-          in: body
-          required: true
-          schema:
-            $ref: '#/definitions/BadgeDTO'
 
   /pointScales:
     get:
@@ -210,8 +209,6 @@ paths:
           description: "Point scale already exists"
     delete:
       summary: "Deletes specific point scale"
-      consumes:
-        - application/json
       parameters:
         - $ref: '#/parameters/Token'
         - name: id
@@ -278,7 +275,7 @@ paths:
         200:
           description: "Successfully done"
           schema:
-            $ref: "#/definitions/RuleDTO"
+            $ref: "#/definitions/RuleResponseDTO"
         404:
           description: "No such event rule"
     put:
@@ -307,8 +304,6 @@ paths:
           description: "Event rule already exists"
     delete:
       summary: "Delete specific event rule"
-      consumes:
-        - application/json
       parameters:
         - $ref: '#/parameters/Token'
         - name: id
@@ -417,6 +412,12 @@ definitions:
       threshold:
         type: integer
         description: "Treshold"
+      pointScaleId:
+        type: integer
+        description: "Related point scale"
+      badgeId:
+        type: integer
+        description: "Related badge"
   RuleResponseDTO:
     type: object
     properties:
@@ -429,14 +430,6 @@ definitions:
       quantity:
         type: integer
       badge:
-        $ref: '#/definitions/BadgesResponseDTO'
-
-  BadgesResponseDTO:
-    type: object
-    properties:
-      badge:
         $ref: '#/definitions/BadgeDTO'
-      user:
-        $ref: '#/definitions/UserDTO'
-      appName:
-        type: string
+      pointScale:
+        $ref: '#/definitions/PointScaleDTO'
