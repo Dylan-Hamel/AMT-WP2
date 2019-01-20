@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/spring-server/swagger-spring.iml" filepath="$PROJECT_DIR$/spring-server/swagger-spring.iml" />
-	  <module fileurl="file://$PROJECT_DIR$/app-specs/wp2Tests.iml" filepath="$PROJECT_DIR$/app-specs/wp2Tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app-specs/wp2.tests.iml" filepath="$PROJECT_DIR$/app-specs/wp2.tests.iml" />
     </modules>
   </component>
 </project>

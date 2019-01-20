@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="appSpecification" />
         <module name="swagger-spring" />
+        <module name="wp2.tests" />
         <module name="wp2Tests" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="appSpecification" target="1.8" />
       <module name="swagger-spring" target="1.8" />
+      <module name="wp2.tests" target="1.8" />
       <module name="wp2Tests" target="1.8" />
     </bytecodeTargetLevel>
   </component>
