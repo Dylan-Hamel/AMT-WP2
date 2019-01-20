@@ -17,7 +17,7 @@ public class UsersApiController implements UsersApi {
     }
 
     @Override
-    public ResponseEntity<UserDTO> usersIdGet(String xGamificationToken, String id) {
+    public ResponseEntity<UserDTO> usersIdGet(String xGamificationToken, Integer id) {
         return null;
     }
 }

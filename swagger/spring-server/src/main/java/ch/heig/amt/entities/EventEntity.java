@@ -74,10 +74,9 @@ public class EventEntity   {
     return localDateTime;
   }
 
-  public void setLocalDateTime(LocalDateTime localDateTime) {
-    this.localDateTime = localDateTime;
+  public void setLocalDateTime(org.joda.time.LocalDateTime toLocalDateTime) {
   }
-
-
+  public void setLocalDateTime(LocalDateTime now) {
+  }
 }
 

@@ -1007,189 +1007,194 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="226" name="type">
+    <column id="251" parent="226" name="local_date_time">
       <Position>2</Position>
+      <DataType>tinyblob|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="252" parent="226" name="type">
+      <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="226" name="user_entity_id">
-      <Position>3</Position>
+    <column id="253" parent="226" name="user_entity_id">
+      <Position>4</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="253" parent="226" name="FKgs4w8124exjtj7v8uxslndti6">
+    <index id="254" parent="226" name="FKgs4w8124exjtj7v8uxslndti6">
       <ColNames>user_entity_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="254" parent="226" name="PRIMARY">
+    <key id="255" parent="226" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="255" parent="226" name="FKgs4w8124exjtj7v8uxslndti6">
+    <foreign-key id="256" parent="226" name="FKgs4w8124exjtj7v8uxslndti6">
       <ColNames>user_entity_id</ColNames>
       <RefSchemaName>AMT_WP2</RefSchemaName>
       <RefTableName>end_user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="256" parent="227" name="point_award_entity_id">
+    <column id="257" parent="227" name="point_award_entity_id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="227" name="points">
+    <column id="258" parent="227" name="points">
       <Position>2</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="227" name="rule_entity_id">
+    <column id="259" parent="227" name="rule_entity_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="227" name="user_entity_id">
+    <column id="260" parent="227" name="user_entity_id">
       <Position>4</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="260" parent="227" name="FKkewvqpk3qg05w8u7m660150m3">
+    <index id="261" parent="227" name="FKkewvqpk3qg05w8u7m660150m3">
       <ColNames>rule_entity_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="261" parent="227" name="FKs2kqy5ncpq0d4dvx57b8s4kxu">
+    <index id="262" parent="227" name="FKs2kqy5ncpq0d4dvx57b8s4kxu">
       <ColNames>user_entity_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="262" parent="227" name="PRIMARY">
+    <key id="263" parent="227" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>point_award_entity_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="263" parent="227" name="FKkewvqpk3qg05w8u7m660150m3">
+    <foreign-key id="264" parent="227" name="FKkewvqpk3qg05w8u7m660150m3">
       <ColNames>rule_entity_id</ColNames>
       <RefSchemaName>AMT_WP2</RefSchemaName>
       <RefTableName>rule</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="264" parent="227" name="FKs2kqy5ncpq0d4dvx57b8s4kxu">
+    <foreign-key id="265" parent="227" name="FKs2kqy5ncpq0d4dvx57b8s4kxu">
       <ColNames>user_entity_id</ColNames>
       <RefSchemaName>AMT_WP2</RefSchemaName>
       <RefTableName>end_user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="265" parent="228" name="id">
+    <column id="266" parent="228" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="228" name="name">
+    <column id="267" parent="228" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="228" name="application_entity_id">
+    <column id="268" parent="228" name="application_entity_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="268" parent="228" name="FKr10nlt0psdl3d8w05boagh901">
+    <index id="269" parent="228" name="FKr10nlt0psdl3d8w05boagh901">
       <ColNames>application_entity_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="269" parent="228" name="PRIMARY">
+    <key id="270" parent="228" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="270" parent="228" name="FKr10nlt0psdl3d8w05boagh901">
+    <foreign-key id="271" parent="228" name="FKr10nlt0psdl3d8w05boagh901">
       <ColNames>application_entity_id</ColNames>
       <RefSchemaName>AMT_WP2</RefSchemaName>
       <RefTableName>application</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="271" parent="229" name="id">
+    <column id="272" parent="229" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="229" name="cle">
+    <column id="273" parent="229" name="cle">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="229" name="val">
+    <column id="274" parent="229" name="val">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="229" name="event_entity_id">
+    <column id="275" parent="229" name="event_entity_id">
       <Position>4</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="275" parent="229" name="FK7be8a82axnx2y5w527qy7umsk">
+    <index id="276" parent="229" name="FK7be8a82axnx2y5w527qy7umsk">
       <ColNames>event_entity_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="276" parent="229" name="PRIMARY">
+    <key id="277" parent="229" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="277" parent="229" name="FK7be8a82axnx2y5w527qy7umsk">
+    <foreign-key id="278" parent="229" name="FK7be8a82axnx2y5w527qy7umsk">
       <ColNames>event_entity_id</ColNames>
       <RefSchemaName>AMT_WP2</RefSchemaName>
       <RefTableName>event</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="278" parent="230" name="id">
+    <column id="279" parent="230" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="279" parent="230" name="name">
+    <column id="280" parent="230" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="280" parent="230" name="badge_entity_id">
+    <column id="281" parent="230" name="badge_entity_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="281" parent="230" name="point_scale_entity_id">
+    <column id="282" parent="230" name="point_scale_entity_id">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="282" parent="230" name="FKnviiooxt98ygqnkvvm2hg93gj">
+    <index id="283" parent="230" name="FKnviiooxt98ygqnkvvm2hg93gj">
       <ColNames>badge_entity_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="283" parent="230" name="FK6ebqgbte7dno64t836sm6y7oo">
+    <index id="284" parent="230" name="FK6ebqgbte7dno64t836sm6y7oo">
       <ColNames>point_scale_entity_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="284" parent="230" name="PRIMARY">
+    <key id="285" parent="230" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="285" parent="230" name="FKnviiooxt98ygqnkvvm2hg93gj">
+    <foreign-key id="286" parent="230" name="FKnviiooxt98ygqnkvvm2hg93gj">
       <ColNames>badge_entity_id</ColNames>
       <RefSchemaName>AMT_WP2</RefSchemaName>
       <RefTableName>badge</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="286" parent="230" name="FK6ebqgbte7dno64t836sm6y7oo">
+    <foreign-key id="287" parent="230" name="FK6ebqgbte7dno64t836sm6y7oo">
       <ColNames>point_scale_entity_id</ColNames>
       <RefSchemaName>AMT_WP2</RefSchemaName>
       <RefTableName>point_scale</RefTableName>
