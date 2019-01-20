@@ -37,7 +37,7 @@ public class PointScalesApiController implements PointScalesApi {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
-        Iterable<PointScaleEntity> pointScaleRepositoryAll = pointScaleRepository.findAll();
+        Iterable<PointScaleEntity> pointScaleRepositoryAll = pointScaleRepository.findPointScaleEntitiesByApplicationEntity(applicationEntity);
         List<PointScaleDTO> pointScaleDTOS = new ArrayList<>();
         for (PointScaleEntity pointScaleEntity : pointScaleRepositoryAll) {
             System.out.println(pointScaleEntity.toString());

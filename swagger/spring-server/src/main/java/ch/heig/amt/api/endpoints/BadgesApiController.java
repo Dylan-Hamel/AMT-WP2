@@ -4,7 +4,6 @@ import ch.heig.amt.api.BadgesApi;
 import ch.heig.amt.api.model.BadgeDTO;
 import ch.heig.amt.entities.ApplicationEntity;
 import ch.heig.amt.entities.BadgeEntity;
-import ch.heig.amt.entities.UserEntity;
 import ch.heig.amt.repositories.ApplicationRepository;
 import ch.heig.amt.repositories.BadgeRepository;
 import org.springframework.http.HttpStatus;
