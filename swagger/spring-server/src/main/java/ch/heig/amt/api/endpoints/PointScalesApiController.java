@@ -60,7 +60,7 @@ public class PointScalesApiController implements PointScalesApi {
         if (pointScaleRepository.exists(lid)) {
             pointScaleRepository.delete(lid);
 
-            return new ResponseEntity<>(HttpStatus.OK);
+            return ResponseEntity.status(HttpStatus.OK).build();
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -107,7 +107,7 @@ public class PointScalesApiController implements PointScalesApi {
         pointScaleRepositoryOne.setName(body.getName());
         pointScaleRepository.save(pointScaleRepositoryOne);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @Override

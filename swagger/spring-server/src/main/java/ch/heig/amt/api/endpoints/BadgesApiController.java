@@ -37,10 +37,17 @@ public class BadgesApiController implements BadgesApi {
 
         Long lid = Long.valueOf(id.longValue());
 
+        String sID = String.valueOf(id);
+        BadgeEntity badgeEntity = badgeRepository.findByIdAndApplicationEntity(sID, applicationEntity);
+
+        if (badgeEntity == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
         // Find matching badge & delete it
         badgeRepository.delete(lid);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @Override

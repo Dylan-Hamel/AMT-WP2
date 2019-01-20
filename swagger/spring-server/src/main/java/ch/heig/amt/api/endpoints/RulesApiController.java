@@ -68,7 +68,7 @@ public class RulesApiController implements RulesApi {
 
         ruleRepository.delete(lid);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @Override
@@ -104,7 +104,7 @@ public class RulesApiController implements RulesApi {
         Long lid = Long.valueOf(id.longValue());
         RuleEntity ruleEntity = ruleRepository.findOne(lid);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @Override
