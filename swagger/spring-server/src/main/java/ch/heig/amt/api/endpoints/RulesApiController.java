@@ -2,6 +2,7 @@ package ch.heig.amt.api.endpoints;
 
 import ch.heig.amt.api.RulesApi;
 import ch.heig.amt.api.model.RuleDTO;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import java.util.List;
@@ -27,7 +28,8 @@ public class RulesApiController implements RulesApi {
 
     @Override
     public ResponseEntity<Void> rulesIdPut(String xGamificationToken, Integer id, RuleDTO body) {
-        return null;
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @Override
