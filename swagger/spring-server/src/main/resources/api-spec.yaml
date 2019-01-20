@@ -149,18 +149,18 @@ paths:
               type: string
         409:
           description: "Point scale already existing"
-  /pointScales/{name}:
+  /pointScales/{id}:
     get:
       summary: "Fetch specific point scale"
       produces:
         - application/json
       parameters:
         - $ref: '#/parameters/Token'
-        - name: name
+        - name: id
           in: path
           description: "Point scale name"
           required: true
-          type: string
+          type: integer
       responses:
         200:
           description: "Successfully done"
@@ -168,17 +168,17 @@ paths:
             $ref: "#/definitions/PointScaleDTO"
         404:
           description: "No such point scale"
-    post:
+    put:
       summary: "Update specific point scale"
       consumes:
         - application/json
       parameters:
         - $ref: '#/parameters/Token'
-        - name: name
+        - name: id
           in: path
           description: "Point scale name"
           required: true
-          type: string
+          type: integer
         - name: body
           in: body
           description: "Required informations"
@@ -198,11 +198,11 @@ paths:
         - application/json
       parameters:
         - $ref: '#/parameters/Token'
-        - name: name
+        - name: id
           in: path
           description: "Point scale name"
           required: true
-          type: string
+          type: integer
       responses:
         200:
           description: "Successfully done"
@@ -246,18 +246,18 @@ paths:
           description: "No such event rule"
         409:
           description: "Event rule already exists"
-  /rules/{name}:
+  /rules/{id}:
     get:
       summary: "Fetch specific event rule"
       produces:
         - application/json
       parameters:
         - $ref: '#/parameters/Token'
-        - name: name
+        - name: id
           in: path
           description: "Event rule name"
           required: true
-          type: string
+          type: integer
       responses:
         200:
           description: "Successfully done"
@@ -265,17 +265,17 @@ paths:
             $ref: "#/definitions/RuleDTO"
         404:
           description: "No such event rule"
-    post:
+    put:
       summary: "Update specific event rule"
       consumes:
         - application/json
       parameters:
         - $ref: '#/parameters/Token'
-        - name: name
+        - name: id
           in: path
           description: "Event rule name"
           required: true
-          type: string
+          type: integer
         - name: body
           in: body
           description: "URL of the modified event rule"

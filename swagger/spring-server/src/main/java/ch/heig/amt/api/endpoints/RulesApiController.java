@@ -16,17 +16,17 @@ public class RulesApiController implements RulesApi {
     }
 
     @Override
-    public ResponseEntity<Void> rulesNameDelete(String xGamificationToken, String name) {
+    public ResponseEntity<Void> rulesIdDelete(String xGamificationToken, String name) {
         return null;
     }
 
     @Override
-    public ResponseEntity<RuleDTO> rulesNameGet(String xGamificationToken, String name) {
+    public ResponseEntity<RuleDTO> rulesIdGet(String xGamificationToken, Integer id) {
         return null;
     }
 
     @Override
-    public ResponseEntity<Void> rulesNamePost(String xGamificationToken, String name, RuleDTO body) {
+    public ResponseEntity<Void> rulesIdPut(String xGamificationToken, Integer id, RuleDTO body) {
         return null;
     }
 
