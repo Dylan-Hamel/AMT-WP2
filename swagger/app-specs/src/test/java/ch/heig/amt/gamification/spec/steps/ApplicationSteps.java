@@ -117,4 +117,78 @@ public class ApplicationSteps {
         throw new PendingException();
     }
 
+
+
+    @Given("^I have an event payload$")
+    public void i_have_an_event_payload() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @When("^I POST it to the /events endpoint$")
+    public void i_POST_it_to_the_events_endpoint() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Given("^I have a new rules payload$")
+    public void i_have_a_new_rules_payload() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @When("^I POST it to /events endpoint$")
+    public void i_POST_it_to_events_endpoint() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @When("^I GET all event rules from /rules endpoint$")
+    public void i_GET_all_event_rules_from_rules_endpoint() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^the result contains the correct rules$")
+    public void the_result_contains_the_correct_rules() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @When("^I GET a rule from /rules endpoint$")
+    public void i_GET_a_rule_from_rules_endpoint() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^the rule is the correct poinruletscale$")
+    public void the_rule_is_the_correct_poinruletscale() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Given("^I have a new rule payload$")
+    public void i_have_a_new_rule_payload() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @When("^I GET a rule from the /rules endpoint$")
+    public void i_GET_a_rule_from_the_rules_endpoint() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^I PUT it to the /rules endpoint$")
+    public void i_PUT_it_to_the_rules_endpoint() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @When("^I DELETE the rule at the /rules endpoint$")
+    public void i_DELETE_the_rule_at_the_rules_endpoint() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
 }

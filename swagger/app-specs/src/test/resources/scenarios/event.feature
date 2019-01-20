@@ -1,4 +1,4 @@
-Feature: PointScale tests
+Feature: Event tests
 
   Background:
     Given there is a gamification server
