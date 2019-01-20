@@ -29,7 +29,7 @@ public class PointScalesApiController implements PointScalesApi {
     }
 
     @Override
-    public ResponseEntity<List<PointScaleDTO>> pointScalesGet(String xGamificationToken) {
+    public ResponseEntity<List<PointScaleDTO>> pointScalesGet(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken) {
 
         // Check user is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -48,7 +48,7 @@ public class PointScalesApiController implements PointScalesApi {
     }
 
     @Override
-    public ResponseEntity<Void> pointScalesIdDelete(String xGamificationToken, Integer id) {
+    public ResponseEntity<Void> pointScalesIdDelete(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, Integer id) {
 
         // Check user is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -67,7 +67,7 @@ public class PointScalesApiController implements PointScalesApi {
     }
 
     @Override
-    public ResponseEntity<PointScaleDTO> pointScalesIdGet(String xGamificationToken, Integer id) {
+    public ResponseEntity<PointScaleDTO> pointScalesIdGet(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, Integer id) {
 
         // Check user is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -89,7 +89,7 @@ public class PointScalesApiController implements PointScalesApi {
 
 
     @Override
-    public ResponseEntity<Void> pointScalesIdPut(String xGamificationToken, Integer id, PointScaleDTO body) {
+    public ResponseEntity<Void> pointScalesIdPut(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, Integer id, PointScaleDTO body) {
 
         // Check app is allowed to post
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -111,7 +111,7 @@ public class PointScalesApiController implements PointScalesApi {
     }
 
     @Override
-    public ResponseEntity<Void> pointScalesPost(String xGamificationToken, @RequestBody PointScaleDTO body) {
+    public ResponseEntity<Void> pointScalesPost(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, @RequestBody PointScaleDTO body) {
 
         // Check app is allowed to post
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);

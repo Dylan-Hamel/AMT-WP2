@@ -222,7 +222,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: "#/definitions/RuleDTO"
+              $ref: "#/definitions/RuleResponseDTO"
     post:
       summary: "Create a new event rule"
       consumes:
@@ -295,11 +295,11 @@ paths:
         - application/json
       parameters:
         - $ref: '#/parameters/Token'
-        - name: name
+        - name: id
           in: path
           description: "Event rule name"
           required: true
-          type: string
+          type: integer
       responses:
         200:
           description: "Successfully done"
@@ -401,3 +401,26 @@ definitions:
       threshold:
         type: integer
         description: "Treshold"
+  RuleResponseDTO:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      type:
+        type: string
+      quantity:
+        type: integer
+      badge:
+        $ref: '#/definitions/BadgesResponseDTO'
+
+  BadgesResponseDTO:
+    type: object
+    properties:
+      badge:
+        $ref: '#/definitions/BadgeDTO'
+      user:
+        $ref: '#/definitions/UserDTO'
+      appName:
+        type: string

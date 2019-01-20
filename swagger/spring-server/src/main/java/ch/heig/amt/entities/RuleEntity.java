@@ -14,6 +14,7 @@ public class RuleEntity {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
 
+  private Integer threshold;
   private String name = null;
 
   @ManyToOne
@@ -31,6 +32,14 @@ public class RuleEntity {
   public RuleEntity name(String name) {
     this.name = name;
     return this;
+  }
+
+  public Integer getThreshold() {
+    return threshold;
+  }
+
+  public void setThreshold(Integer threshold) {
+    this.threshold = threshold;
   }
 
   public String getName() {
