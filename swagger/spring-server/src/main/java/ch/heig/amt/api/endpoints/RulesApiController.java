@@ -2,6 +2,8 @@ package ch.heig.amt.api.endpoints;
 
 import ch.heig.amt.api.RulesApi;
 import ch.heig.amt.api.model.RuleDTO;
+
+import ch.heig.amt.api.model.RuleResponseDTO;
 import ch.heig.amt.entities.ApplicationEntity;
 import ch.heig.amt.entities.RuleEntity;
 import ch.heig.amt.repositories.ApplicationRepository;
@@ -9,6 +11,7 @@ import ch.heig.amt.repositories.RuleRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.ArrayList;
@@ -26,8 +29,9 @@ public class RulesApiController implements RulesApi {
         this.applicationRepository = applicationRepository;
     }
 
+
     @Override
-    public ResponseEntity<List<RuleDTO>> rulesGet(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken) {
+    public ResponseEntity<List<RuleResponseDTO>> rulesGet(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken) {
 
         // Check user is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -41,7 +45,8 @@ public class RulesApiController implements RulesApi {
             ruleDTOS.add(toRuleDTO(r));
         }
 
-        return new ResponseEntity<>(ruleDTOS, HttpStatus.OK);
+        // return new ResponseEntity<>(ruleDTOS, HttpStatus.HTTP_VERSION_NOT_SUPPORTED)
+        return null;
     }
 
     @Override
@@ -97,6 +102,8 @@ public class RulesApiController implements RulesApi {
 
         Long lid = Long.valueOf(id.longValue());
         RuleEntity ruleEntity = ruleRepository.findOne(lid);
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @Override
