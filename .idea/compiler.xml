@@ -6,13 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="fruitsSpecification" />
         <module name="swagger-spring" />
         <module name="wp2Tests" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="fruitsSpecification" target="1.8" />
       <module name="swagger-spring" target="1.8" />
       <module name="wp2Tests" target="1.8" />
     </bytecodeTargetLevel>

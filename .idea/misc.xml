@@ -6,8 +6,8 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/spring-server/pom.xml" />
-        <option value="$PROJECT_DIR$/tests/pom.xml" />
+        <option value="$PROJECT_DIR$/swagger/spring-server/pom.xml" />
+        <option value="$PROJECT_DIR$/swagger/app-specs/pom.xml" />
       </list>
     </option>
   </component>
