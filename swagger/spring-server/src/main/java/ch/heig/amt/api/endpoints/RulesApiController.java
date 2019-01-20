@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.ArrayList;
@@ -107,13 +108,16 @@ public class RulesApiController implements RulesApi {
     }
 
     @Override
-    public ResponseEntity<Void> rulesPost(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, RuleDTO body) {
+    public ResponseEntity<Void> rulesPost(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, @RequestBody RuleDTO body) {
 
         // Check user is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
         if (applicationEntity == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
+
+        RuleEntity ruleEntity = toRuleEntity(body);
+        ruleRepository.save(ruleEntity);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
