@@ -1,5 +1,6 @@
 package ch.heig.amt.repositories;
 
+import ch.heig.amt.entities.ApplicationEntity;
 import ch.heig.amt.entities.BadgeEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -8,4 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface BadgeRepository extends CrudRepository<BadgeEntity, Long> {
 
     BadgeEntity findBadgeEntityByName(String name);
+    BadgeEntity findByIdAndApplicationEntity(String id, ApplicationEntity applicationEntity);
 }

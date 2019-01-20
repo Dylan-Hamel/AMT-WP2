@@ -63,6 +63,36 @@ public class BadgesApiController implements BadgesApi {
     }
 
     @Override
+    public ResponseEntity<Void> badgesIdPut(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, String id, @RequestBody BadgeDTO body) {
+
+        // Check app is allowed to post event
+        ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
+        if (applicationEntity == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        if(applicationEntity == null) {
+            // app not found
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        BadgeEntity badgeEntity = this.badgeRepository.findByIdAndApplicationEntity(id, applicationEntity);
+
+        if (badgeEntity == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
+        // check if we have a new description
+        if(!body.getName().isEmpty()){
+            badgeEntity.setName(body.getName());
+        }
+
+        //save badge
+        badgeRepository.save(badgeEntity);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @Override
     public ResponseEntity<Void> badgesPost(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, @RequestBody BadgeDTO body) {
 
         // Check user is allowed to post event
@@ -75,8 +105,9 @@ public class BadgesApiController implements BadgesApi {
         BadgeEntity badgeEntity = toBadgeEntity(body);
         badgeEntity.setApplicationEntity(applicationEntity);
         badgeRepository.save(badgeEntity);
+        String badgeID = String.valueOf(badgeEntity.getId());
 
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return ResponseEntity.status(HttpStatus.CREATED).header("newID", badgeID).build();
     }
 
     public BadgeEntity toBadgeEntity(BadgeDTO badgeDTO) {

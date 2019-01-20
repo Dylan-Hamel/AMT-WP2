@@ -114,6 +114,22 @@ paths:
         404:
           description: "No such badge"
 
+  /badges/{id}:
+    put:
+      summary: "Update a given badge"
+      consumes:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: id
+          in: path
+          required: true
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/BadgeDTO'
+
   /pointScales:
     get:
       summary: "List point scales linked to current application"
