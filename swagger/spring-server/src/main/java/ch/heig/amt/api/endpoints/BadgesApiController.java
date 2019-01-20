@@ -28,7 +28,7 @@ public class BadgesApiController implements BadgesApi {
     }
 
     @Override
-    public ResponseEntity<Void> badgesDelete(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, String name) {
+    public ResponseEntity<Void> badgesDelete(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, Integer id) {
 
         // Check auth is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -36,9 +36,10 @@ public class BadgesApiController implements BadgesApi {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
+        Long lid = Long.valueOf(id.longValue());
+
         // Find matching badge & delete it
-        BadgeEntity badgeEntity = badgeRepository.findBadgeEntityByName(name);
-        badgeRepository.delete(badgeEntity);
+        badgeRepository.delete(lid);
 
         return new ResponseEntity<>(HttpStatus.OK);
     }

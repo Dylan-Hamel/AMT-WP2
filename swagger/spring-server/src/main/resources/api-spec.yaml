@@ -103,11 +103,11 @@ paths:
         - application/json
       parameters:
         - $ref: '#/parameters/Token'
-        - name: name
+        - name: id
           in: path
           description: "Badge name"
           required: true
-          type: string
+          type: integer
       responses:
         200:
           description: "Successfully done"

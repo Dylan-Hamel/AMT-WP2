@@ -88,7 +88,8 @@ public class UsersApiController implements UsersApi {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
 
-        UserEntity userEntity = userRepository.findUserEntityById(id);
+        Long lid = Long.valueOf(id.longValue());
+        UserEntity userEntity = userRepository.findUserEntityById(lid);
 
         if (userEntity == null) {
             // User doesn't exist
