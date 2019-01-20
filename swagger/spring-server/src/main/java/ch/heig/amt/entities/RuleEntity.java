@@ -40,5 +40,37 @@ public class RuleEntity {
   public void setName(String name) {
     this.name = name;
   }
+
+  public PointScaleEntity getPointScaleEntity() {
+    return pointScaleEntity;
+  }
+
+  public void setPointScaleEntity(PointScaleEntity pointScaleEntity) {
+    this.pointScaleEntity = pointScaleEntity;
+  }
+
+  public BadgeEntity getBadgeEntity() {
+    return badgeEntity;
+  }
+
+  public void setBadgeEntity(BadgeEntity badgeEntity) {
+    this.badgeEntity = badgeEntity;
+  }
+
+  public List<PointAwardEntity> getPointAwardEntities() {
+    return pointAwardEntities;
+  }
+
+  public void setPointAwardEntities(List<PointAwardEntity> pointAwardEntities) {
+    this.pointAwardEntities = pointAwardEntities;
+  }
+
+  public List<PointAwardEntity> getPointAwardEntity() {
+    return pointAwardEntity;
+  }
+
+  public void setPointAwardEntity(List<PointAwardEntity> pointAwardEntity) {
+    this.pointAwardEntity = pointAwardEntity;
+  }
 }
 

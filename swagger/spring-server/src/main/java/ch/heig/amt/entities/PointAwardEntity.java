@@ -53,5 +53,21 @@ public class PointAwardEntity {
   public void setPoints(Long points) {
     this.points = points;
   }
+
+  public RuleEntity getRuleEntity() {
+    return ruleEntity;
+  }
+
+  public void setRuleEntity(RuleEntity ruleEntity) {
+    this.ruleEntity = ruleEntity;
+  }
+
+  public UserEntity getUserEntity() {
+    return userEntity;
+  }
+
+  public void setUserEntity(UserEntity userEntity) {
+    this.userEntity = userEntity;
+  }
 }
 

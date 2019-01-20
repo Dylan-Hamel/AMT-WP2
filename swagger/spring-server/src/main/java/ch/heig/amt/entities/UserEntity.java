@@ -69,5 +69,7 @@ public class UserEntity {
   public void setApplicationEntity(ApplicationEntity applicationEntity) {
     this.applicationEntity = applicationEntity;
   }
+
+
 }
 

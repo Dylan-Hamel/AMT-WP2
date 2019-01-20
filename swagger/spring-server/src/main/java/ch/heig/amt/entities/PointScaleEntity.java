@@ -33,5 +33,21 @@ public class PointScaleEntity {
   public void setName(String name) {
     this.name = name;
   }
+
+  public List<RuleEntity> getRuleEntity() {
+    return ruleEntity;
+  }
+
+  public void setRuleEntity(List<RuleEntity> ruleEntity) {
+    this.ruleEntity = ruleEntity;
+  }
+
+  public ApplicationEntity getApplicationEntity() {
+    return applicationEntity;
+  }
+
+  public void setApplicationEntity(ApplicationEntity applicationEntity) {
+    this.applicationEntity = applicationEntity;
+  }
 }
 

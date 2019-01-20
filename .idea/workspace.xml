@@ -114,30 +114,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AMT-WP2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AMT-WP2" type="462c0819:PsiDirectoryNode" />
-              <item name="swagger" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AMT-WP2" type="462c0819:PsiDirectoryNode" />
-              <item name="swagger" type="462c0819:PsiDirectoryNode" />
-              <item name="full-project" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -441,6 +420,7 @@
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -650,11 +630,12 @@
       <workItem from="1546966858747" duration="7559000" />
       <workItem from="1547745548714" duration="14000" />
       <workItem from="1547980706426" duration="17000" />
+      <workItem from="1547987365231" duration="9000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28095000" />
+    <option name="totallyTimeSpent" value="28104000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -666,9 +647,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="817" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21879195" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22174536" />
       <window_info id="Structure" order="1" weight="0.24966443" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -684,7 +665,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4986577" visible="true" weight="0.3711048" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4986577" visible="true" weight="0.37103447" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067115" side_tool="true" weight="0.7818697" />
       <window_info anchor="bottom" id="Application Servers" order="10" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4986577" weight="0.3286119" />
@@ -704,7 +685,7 @@
       <window_info anchor="right" id="Maven Projects" order="8" visible="true" weight="0.19664429" />
       <window_info anchor="right" id="Capture Analysis" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
-      <window_info anchor="right" id="Maven" order="11" visible="true" weight="0.14295302" />
+      <window_info anchor="right" id="Maven" order="11" visible="true" weight="0.1423462" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26251787" />

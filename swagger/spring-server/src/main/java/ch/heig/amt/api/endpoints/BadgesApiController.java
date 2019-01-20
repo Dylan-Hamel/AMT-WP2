@@ -4,6 +4,7 @@ import ch.heig.amt.api.BadgesApi;
 import ch.heig.amt.api.model.BadgeDTO;
 import ch.heig.amt.entities.ApplicationEntity;
 import ch.heig.amt.entities.BadgeEntity;
+import ch.heig.amt.entities.UserEntity;
 import ch.heig.amt.repositories.ApplicationRepository;
 import ch.heig.amt.repositories.BadgeRepository;
 import org.springframework.http.HttpStatus;
@@ -28,7 +29,7 @@ public class BadgesApiController implements BadgesApi {
     @Override
     public ResponseEntity<Void> badgesDelete(String xGamificationToken, String name) {
 
-        // Check user is allowed to post event
+        // Check auth is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
         if (applicationEntity == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
@@ -71,6 +72,7 @@ public class BadgesApiController implements BadgesApi {
 
         // save new badge to database
         BadgeEntity badgeEntity = toBadgeEntity(body);
+        badgeEntity.setApplicationEntity(applicationEntity);
         badgeRepository.save(badgeEntity);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
