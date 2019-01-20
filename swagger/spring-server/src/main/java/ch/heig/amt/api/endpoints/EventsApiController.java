@@ -52,7 +52,8 @@ public class EventsApiController implements EventsApi {
     }
 
     @Override
-    public ResponseEntity<Void> eventsPost(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, @RequestBody EventDTO body) {
+    public ResponseEntity<Void> eventsPost(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken,
+                                           @RequestBody EventDTO body) {
 
         // Check user is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -72,12 +73,11 @@ public class EventsApiController implements EventsApi {
         }
 
         EventEntity event = toEventEntity(body);
-        event.setUserEntity(user);
 
-        // Set event time & properties
+        // Set user, event time & properties
+        event.setUserEntity(user);
+        event.getPropertyEntities().add((PropertyEntity) body.getProperties());
         event.setLocalDateTime(LocalDateTime.now());
-        List<PropertyEntity> propertyEntities = (List<PropertyEntity>) body.getProperties();
-        event.setPropertyEntities(propertyEntities);
         this.eventRepository.save(event);
 
         return ResponseEntity.ok().build();

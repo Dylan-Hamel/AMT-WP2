@@ -391,8 +391,9 @@ definitions:
         format: date-time
         description: "Event timestamp"
       properties:
-        type: object
-        description: properties
+        type: array
+        items:
+          $ref: '#/definitions/PropertyEntity'
 
   BadgeDTO:
     description: "A badge in an application"
@@ -401,6 +402,15 @@ definitions:
       name:
         type: string
         description: "The name of the badge"
+
+  PropertyEntity:
+    description: "List of properties"
+    type: object
+    properties:
+      cle:
+        type: string
+      val:
+        type: string
 
   RuleDTO:
     description: "Rule"
