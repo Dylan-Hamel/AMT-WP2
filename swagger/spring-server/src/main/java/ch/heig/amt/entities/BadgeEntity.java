@@ -46,5 +46,29 @@ public class BadgeEntity {
   public void setName(String name) {
     this.name = name;
   }
+
+  public ApplicationEntity getApplicationEntity() {
+    return applicationEntity;
+  }
+
+  public void setApplicationEntity(ApplicationEntity applicationEntity) {
+    this.applicationEntity = applicationEntity;
+  }
+
+  public List<RuleEntity> getRuleEntity() {
+    return ruleEntity;
+  }
+
+  public void setRuleEntity(List<RuleEntity> ruleEntity) {
+    this.ruleEntity = ruleEntity;
+  }
+
+  public UserEntity getUserEntity() {
+    return userEntity;
+  }
+
+  public void setUserEntity(UserEntity userEntity) {
+    this.userEntity = userEntity;
+  }
 }
 

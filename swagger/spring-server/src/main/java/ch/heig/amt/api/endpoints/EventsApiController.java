@@ -4,16 +4,19 @@ import ch.heig.amt.api.EventsApi;
 import ch.heig.amt.api.model.EventDTO;
 import ch.heig.amt.entities.ApplicationEntity;
 import ch.heig.amt.entities.EventEntity;
+import ch.heig.amt.entities.PropertyEntity;
 import ch.heig.amt.entities.UserEntity;
 import ch.heig.amt.repositories.ApplicationRepository;
 import ch.heig.amt.repositories.EventRepository;
 import ch.heig.amt.repositories.UserRepository;
+import org.apache.tomcat.jni.Local;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-17T18:45:54.991+01:00")
@@ -34,6 +37,8 @@ public class EventsApiController implements EventsApi {
 
         EventEntity eventEntity = new EventEntity();
         eventEntity.setType(eventDTO.getType());
+        // eventEntity.setPropertyEntities(eventDTO.getProperties());
+        eventEntity.setLocalDateTime(eventDTO.getTimestamp().toLocalDateTime());
 
         return eventEntity;
     }
@@ -69,6 +74,10 @@ public class EventsApiController implements EventsApi {
         EventEntity event = toEventEntity(body);
         event.setUserEntity(user);
 
+        // Set event time & properties
+        event.setLocalDateTime(LocalDateTime.now());
+        List<PropertyEntity> propertyEntities = (List<PropertyEntity>) body.getProperties();
+        event.setPropertyEntities(propertyEntities);
         this.eventRepository.save(event);
 
         return ResponseEntity.ok().build();

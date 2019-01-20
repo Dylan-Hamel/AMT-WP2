@@ -10,6 +10,10 @@ import ch.heig.amt.repositories.PointScaleRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-17T18:45:54.991+01:00")
@@ -25,7 +29,7 @@ public class PointScalesApiController implements PointScalesApi {
     }
 
     @Override
-    public ResponseEntity<List<PointScaleDTO>> pointScalesGet(String xGamificationToken) {
+    public ResponseEntity<List<PointScaleDTO>> pointScalesGet(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken) {
 
         // Check user is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -34,8 +38,9 @@ public class PointScalesApiController implements PointScalesApi {
         }
 
         Iterable<PointScaleEntity> pointScaleRepositoryAll = pointScaleRepository.findAll();
-        List<PointScaleDTO> pointScaleDTOS = null;
+        List<PointScaleDTO> pointScaleDTOS = new ArrayList<>();
         for (PointScaleEntity pointScaleEntity : pointScaleRepositoryAll) {
+            System.out.println(pointScaleEntity.toString());
             pointScaleDTOS.add(toPointScaleDTO(pointScaleEntity));
         }
 
@@ -43,7 +48,7 @@ public class PointScalesApiController implements PointScalesApi {
     }
 
     @Override
-    public ResponseEntity<Void> pointScalesNameDelete(String xGamificationToken, String name) {
+    public ResponseEntity<Void> pointScalesIdDelete(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, Integer id) {
 
         // Check user is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -51,14 +56,18 @@ public class PointScalesApiController implements PointScalesApi {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
-        PointScaleEntity pointScaleEntity = pointScaleRepository.findPointScaleEntitiesByName(name);
-        pointScaleRepository.delete(pointScaleEntity);
+        Long lid = Long.valueOf(id.longValue());
+        if (pointScaleRepository.exists(lid)) {
+            pointScaleRepository.delete(lid);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @Override
-    public ResponseEntity<PointScaleDTO> pointScalesNameGet(String xGamificationToken, String name) {
+    public ResponseEntity<PointScaleDTO> pointScalesIdGet(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, Integer id) {
 
         // Check user is allowed to post event
         ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
@@ -66,7 +75,13 @@ public class PointScalesApiController implements PointScalesApi {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
-        PointScaleEntity pointScaleEntity = pointScaleRepository.findPointScaleEntitiesByName(name);
+        Long lid = Long.valueOf(id.longValue());
+        PointScaleEntity pointScaleEntity = pointScaleRepository.findOne(lid);
+
+        if (pointScaleEntity == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
         PointScaleDTO pointScaleDTO = toPointScaleDTO(pointScaleEntity);
 
         return new ResponseEntity<>(pointScaleDTO, HttpStatus.OK);
@@ -74,13 +89,41 @@ public class PointScalesApiController implements PointScalesApi {
 
 
     @Override
-    public ResponseEntity<Void> pointScalesNamePost(String xGamificationToken, String name, PointScaleDTO body) {
-        return null;
+    public ResponseEntity<Void> pointScalesIdPut(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, Integer id, PointScaleDTO body) {
+
+        // Check app is allowed to post
+        ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
+        if (applicationEntity == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        Long lid = Long.valueOf(id.longValue());
+        PointScaleEntity pointScaleRepositoryOne = pointScaleRepository.findOne(lid);
+
+        if (pointScaleRepositoryOne == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        pointScaleRepositoryOne.setName(body.getName());
+        pointScaleRepository.save(pointScaleRepositoryOne);
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @Override
-    public ResponseEntity<Void> pointScalesPost(String xGamificationToken, PointScaleDTO body) {
-        return null;
+    public ResponseEntity<Void> pointScalesPost(@RequestHeader(value="X-Gamification-Token", required = true) String xGamificationToken, @RequestBody PointScaleDTO body) {
+
+        // Check app is allowed to post
+        ApplicationEntity applicationEntity = this.applicationRepository.findByToken(xGamificationToken);
+        if (applicationEntity == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        PointScaleEntity pointScaleEntity = toPointScaleEntity(body);
+        pointScaleEntity.setApplicationEntity(applicationEntity);
+        pointScaleRepository.save(pointScaleEntity);
+
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     public PointScaleDTO toPointScaleDTO(PointScaleEntity pointScaleEntity) {

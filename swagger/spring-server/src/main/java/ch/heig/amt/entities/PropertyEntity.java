@@ -38,4 +38,28 @@ public class PropertyEntity {
     public void setValue(String value) {
         this.val = value;
     }
+
+    public String getCle() {
+        return cle;
+    }
+
+    public void setCle(String cle) {
+        this.cle = cle;
+    }
+
+    public String getVal() {
+        return val;
+    }
+
+    public void setVal(String val) {
+        this.val = val;
+    }
+
+    public EventEntity getEventEntity() {
+        return eventEntity;
+    }
+
+    public void setEventEntity(EventEntity eventEntity) {
+        this.eventEntity = eventEntity;
+    }
 }

@@ -49,12 +49,36 @@ public class ApplicationEntity {
     return this;
   }
 
-  public String gettoken() {
+  public String getToken() {
     return token;
   }
 
-  public void settoken(String token) {
+  public void setToken(String token) {
     this.token = token;
+  }
+
+  public List<BadgeEntity> getBadges() {
+    return badges;
+  }
+
+  public void setBadges(List<BadgeEntity> badges) {
+    this.badges = badges;
+  }
+
+  public List<UserEntity> getUsers() {
+    return users;
+  }
+
+  public void setUsers(List<UserEntity> users) {
+    this.users = users;
+  }
+
+  public List<PointScaleEntity> getPointScales() {
+    return pointScales;
+  }
+
+  public void setPointScales(List<PointScaleEntity> pointScales) {
+    this.pointScales = pointScales;
   }
 }
 

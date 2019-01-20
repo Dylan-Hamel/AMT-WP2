@@ -1,5 +1,6 @@
 package ch.heig.amt.entities;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -29,6 +30,8 @@ public class EventEntity   {
   @OneToMany(mappedBy = "eventEntity")
   private List<PropertyEntity> propertyEntities;
 
+  private LocalDateTime localDateTime;
+
   public EventEntity id(Long id) {
     this.id = id;
     return this;
@@ -57,6 +60,23 @@ public class EventEntity   {
 
   public void setUserEntity(UserEntity userEntity) {
     this.userEntity = userEntity;
+  }
+
+  public List<PropertyEntity> getPropertyEntities() {
+    return propertyEntities;
+  }
+
+  public void setPropertyEntities(List<PropertyEntity> propertyEntities) {
+    this.propertyEntities = propertyEntities;
+  }
+
+  public LocalDateTime getLocalDateTime() {
+    return localDateTime;
+  }
+
+  public void setLocalDateTime(org.joda.time.LocalDateTime toLocalDateTime) {
+  }
+  public void setLocalDateTime(LocalDateTime now) {
   }
 }
 
