@@ -1,0 +1,426 @@
+swagger: '2.0'
+info:
+  version: '0.1.1'
+  title: AMT
+  description: Gamification App
+host: localhost:8080
+basePath: /api
+schemes:
+  - http
+paths:
+  /users:
+    get:
+      summary: "List all users linked to current application"
+      description: "List all users linked to current application"
+      produces:
+        - application/json
+      parameters:
+        - $ref: "#/parameters/Token"
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/UserDTO"
+  /users/{id}:
+    get:
+      summary: "Fetch specific user"
+      produces:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: id
+          in: path
+          description: "User ID"
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            $ref: "#/definitions/UserDTO"
+        404:
+          description: "No such user"
+
+  /events:
+    post:
+      summary: "Create an event"
+      description: "Create event triggered by user action for a given application"
+      consumes:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/EventDTO"
+      responses:
+        201:
+          description: "Successfully done"
+
+  /badges:
+    get:
+      summary: "List all badges linked to current application"
+      produces:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+      responses:
+        200:
+          description: "Successfully"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/BadgeDTO"
+    post:
+      summary: "Create new badge"
+      consumes:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/BadgeDTO"
+      responses:
+        201:
+          description: "Successfully done"
+          headers:
+            Location:
+              description: "URI of newly created object"
+              type: string
+        409:
+          description: "Badge already exists"
+
+    delete:
+      summary: "Deletes specific badge"
+      consumes:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: id
+          in: path
+          description: "Badge name"
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such badge"
+
+  /pointScales:
+    get:
+      summary: "List point scales linked to current application"
+      produces:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/PointScaleDTO"
+    post:
+      summary: "Create point scale"
+      consumes:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/PointScaleDTO"
+      responses:
+        201:
+          description: "Successfully done"
+          headers:
+            Location:
+              description: "URI of newly created object"
+              type: string
+        409:
+          description: "Point scale already existing"
+  /pointScales/{id}:
+    get:
+      summary: "Fetch specific point scale"
+      produces:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: id
+          in: path
+          description: "Point scale name"
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            $ref: "#/definitions/PointScaleDTO"
+        404:
+          description: "No such point scale"
+    put:
+      summary: "Update specific point scale"
+      consumes:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: id
+          in: path
+          description: "Point scale name"
+          required: true
+          type: integer
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/PointScaleDTO"
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such point scale"
+        409:
+          description: "Point scale already exists"
+    delete:
+      summary: "Deletes specific point scale"
+      consumes:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: id
+          in: path
+          description: "Point scale name"
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such point scale"
+
+  /rules/:
+    get:
+      summary: "List events rules linked to current application"
+      produces:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/RuleResponseDTO"
+    post:
+      summary: "Create a new event rule"
+      consumes:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: body
+          in: body
+          description: "Required informations"
+          required: true
+          schema:
+            $ref: "#/definitions/RuleDTO"
+      responses:
+        201:
+          description: "Successfully done"
+          headers:
+            Location:
+              description: "URI of newly created object"
+              type: string
+        404:
+          description: "No such event rule"
+        409:
+          description: "Event rule already exists"
+  /rules/{id}:
+    get:
+      summary: "Fetch specific event rule"
+      produces:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: id
+          in: path
+          description: "Event rule name"
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Successfully done"
+          schema:
+            $ref: "#/definitions/RuleDTO"
+        404:
+          description: "No such event rule"
+    put:
+      summary: "Update specific event rule"
+      consumes:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: id
+          in: path
+          description: "Event rule name"
+          required: true
+          type: integer
+        - name: body
+          in: body
+          description: "URL of the modified event rule"
+          required: true
+          schema:
+            $ref: "#/definitions/RuleDTO"
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such event rule"
+        409:
+          description: "Event rule already exists"
+    delete:
+      summary: "Delete specific event rule"
+      consumes:
+        - application/json
+      parameters:
+        - $ref: '#/parameters/Token'
+        - name: id
+          in: path
+          description: "Event rule name"
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "Successfully done"
+        404:
+          description: "No such event rule"
+
+parameters:
+  Token:
+    description: "Token Auth"
+    name: "X-Gamification-Token"
+    in: header
+    required: true
+    type: string
+
+responses:
+  UnauthorizedError:
+    description: Authentication information is missing or invalid
+    headers:
+      auth:
+        type: string
+
+definitions:
+  UserDTO:
+    description: "An user doing various actions in an application"
+    type: object
+    properties:
+      username:
+        type: string
+        description: "The username of the user"
+      badges:
+        type: array
+        description: "User's badges"
+        items:
+          $ref: '#/definitions/BadgeDTO'
+
+  ApplicationDTO:
+    description: "The info of a gamified application"
+    type: object
+    properties:
+      name:
+        type: string
+        description: "The unique name of the gamified application"
+      token:
+        type: string
+        description: "The token of the gamified application"
+
+  PointAwardDTO:
+    description: "How many points an user has on a given point scale"
+    type: object
+    properties:
+      pointAwardId:
+        type: integer
+        description: "Point Award ID"
+      points:
+        type: number
+        description: "How many points are on the point scale"
+
+  PointScaleDTO:
+    description: "A point scale in an application"
+    type: object
+    properties:
+      name:
+        type: string
+        description: "The name of the point scale"
+
+  EventDTO:
+    description: "An event created when an user does something on the application"
+    type: object
+    properties:
+      user:
+        type: string
+        description: "Username"
+      type:
+        type: string
+        description: "The type of the event"
+      timestamp:
+        type: string
+        format: date-time
+        description: "Event timestamp"
+      properties:
+        type: object
+        description: properties
+
+  BadgeDTO:
+    description: "A badge in an application"
+    type: object
+    properties:
+      name:
+        type: string
+        description: "The name of the badge"
+
+  RuleDTO:
+    description: "Rule"
+    type: object
+    properties:
+      name:
+        type: string
+        description: "Rule name"
+      threshold:
+        type: integer
+        description: "Treshold"
+  RuleResponseDTO:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      type:
+        type: string
+      quantity:
+        type: integer
+      badge:
+        $ref: '#/definitions/BadgesResponseDTO'
+
+  BadgesResponseDTO:
+    type: object
+    properties:
+      badge:
+        $ref: '#/definitions/BadgeDTO'
+      user:
+        $ref: '#/definitions/UserDTO'
+      appName:
+        type: string

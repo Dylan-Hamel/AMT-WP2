@@ -1,5 +1,4 @@
 # Misc
 target/
 .DS_Store
-app-specs/
 workspace.xml
