@@ -9,7 +9,6 @@
         <module name="appSpecification" />
         <module name="swagger-spring" />
         <module name="wp2.tests" />
-        <module name="wp2Tests" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
