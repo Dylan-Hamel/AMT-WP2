@@ -222,7 +222,7 @@ paths:
         404:
           description: "No such point scale"
 
-  /rules/:
+  /rules:
     get:
       summary: "List events rules linked to current application"
       produces:

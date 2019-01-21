@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df392601-1731-4931-bd46-833b71e013a0" name="Default Changelist" comment="" />
+    <list default="true" id="df392601-1731-4931-bd46-833b71e013a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app-specs/src/main/resources/api-spec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/resources/api-spec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-server/src/main/resources/api-spec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-server/src/main/resources/api-spec.yaml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/spring-server/target/" />
     <ignored path="$PROJECT_DIR$/app-specs/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -156,7 +159,35 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/api/endpoints/BadgesApiController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-server/src/main/resources/api-spec.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1734">
+              <caret line="224" column="8" selection-start-line="224" selection-start-column="8" selection-end-line="224" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app-specs/src/main/resources/api-spec.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="224" column="8" lean-forward="true" selection-start-line="224" selection-start-column="8" selection-end-line="224" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -210,9 +241,9 @@
         <option value="$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/api/endpoints/BadgesApiController.java" />
         <option value="$PROJECT_DIR$/spring-server/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/steps/ApplicationSteps.java" />
+        <option value="$PROJECT_DIR$/app-specs/pom.xml" />
         <option value="$PROJECT_DIR$/spring-server/src/main/resources/api-spec.yaml" />
         <option value="$PROJECT_DIR$/app-specs/src/main/resources/api-spec.yaml" />
-        <option value="$PROJECT_DIR$/app-specs/pom.xml" />
       </list>
     </option>
   </component>
@@ -228,11 +259,11 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="wp2.tests" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="swagger-spring" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="wp2.tests" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="swagger-spring" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
       </expand>
@@ -259,6 +290,24 @@
             </path>
             <path>
               <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="spring-server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -271,6 +320,21 @@
               <item name="spring-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="amt" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
@@ -297,7 +361,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548061853604" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548067938429" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -476,12 +540,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19354000" />
+    <option name="totallyTimeSpent" value="20161000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21208054" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21208054" />
       <window_info id="Structure" order="1" weight="0.24964234" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -492,7 +557,7 @@
       <window_info anchor="bottom" id="Database Console" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.47733712" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.47733712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39954075" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -761,13 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/api/endpoints/BadgesApiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="56" column="103" selection-start-line="56" selection-start-column="85" selection-end-line="56" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spring-server/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -817,20 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app-specs/src/main/resources/api-spec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7565">
-          <caret line="445" selection-start-line="445" selection-end-line="445" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-server/src/main/resources/api-spec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/api/endpoints/EventsApiController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-641">
@@ -859,6 +903,27 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/api/endpoints/BadgesApiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-server/src/main/resources/api-spec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1734">
+          <caret line="224" column="8" selection-start-line="224" selection-start-column="8" selection-end-line="224" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-specs/src/main/resources/api-spec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="224" column="8" lean-forward="true" selection-start-line="224" selection-start-column="8" selection-end-line="224" selection-end-column="8" />
         </state>
       </provider>
     </entry>
