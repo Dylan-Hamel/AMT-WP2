@@ -1,13 +1,11 @@
 package ch.heig.amt.entities;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.hibernate.annotations.Cascade;
 import org.springframework.validation.annotation.Validated;
@@ -31,6 +29,10 @@ public class EventEntity   {
   private List<PropertyEntity> propertyEntities;
 
   private LocalDateTime localDateTime;
+
+  public EventEntity () {
+    this.propertyEntities = new ArrayList<PropertyEntity>();
+  }
 
   public EventEntity id(Long id) {
     this.id = id;
