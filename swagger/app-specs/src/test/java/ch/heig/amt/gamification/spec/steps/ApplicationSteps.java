@@ -250,6 +250,8 @@ this.lastStatusCode = apiException.getCode();
         rule = new RuleDTO();
         rule.setName(ruleName);
         rule.setThreshold(23);
+        rule.setBadgeId(1);
+        rule.setPointScaleId(1);
     }
 
     @When("^I POST it to /events endpoint$")
@@ -276,8 +278,8 @@ this.lastStatusCode = apiException.getCode();
     }
 
     @Then("^the result contains the correct rule \"(\\w+)\"$")
-    public void the_result_contains_the_correct_rules() throws Throwable {
-        assertNotNull(findRuleByName("regles_une"));
+    public void the_result_contains_the_correct_rule(String ruleName) throws Throwable {
+        assertNotNull(findRuleByName(ruleName));
     }
 
     @When("^I GET a rule from /rules/\"(\\w+)\" endpoint$")
@@ -300,7 +302,7 @@ this.lastStatusCode = apiException.getCode();
     @Given("^I have a new rule payload$")
     public void i_have_a_new_rule_payload() throws Throwable {
         rule = new RuleDTO();
-        rule.setName("regles_deux");
+        rule.setName("regle2");
         rule.setThreshold(75);
     }
 
@@ -317,7 +319,7 @@ this.lastStatusCode = apiException.getCode();
 
     @Then("^I PUT it to the /rules endpoint$")
     public void i_PUT_it_to_the_rules_endpoint() throws Throwable {
-        RuleDTO ruleDTO = this.findRuleByName("regles_deux");
+        RuleDTO ruleDTO = this.findRuleByName("regle2");
         if(ruleDTO != null){
             /*
             try{
