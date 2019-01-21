@@ -2,51 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df392601-1731-4931-bd46-833b71e013a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../java-client/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/.swagger-codegen-ignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/.swagger-codegen/VERSION" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/build.sbt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/docs/DefaultApi.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/docs/Message.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/docs/User.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/git_push.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/ApiCallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/ApiClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/ApiException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/ApiResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/Configuration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/GzipRequestInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/JSON.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/Pair.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/ProgressRequestBody.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/ProgressResponseBody.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/StringUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/api/DefaultApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/auth/ApiKeyAuth.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/auth/Authentication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/auth/HttpBasicAuth.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/auth/OAuth.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/auth/OAuthFlow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/model/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/main/java/io/swagger/client/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-client/src/test/java/io/swagger/client/api/DefaultApiTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-specs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/steps/ApplicationSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/steps/ApplicationSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/badges.feature" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/badges.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/event.feature" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/event.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/rules.feature" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/rules.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-specs/src/test/resources/environment.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/test/resources/environment.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/spring-server/target/" />
     <ignored path="$PROJECT_DIR$/app-specs/target/" />
@@ -206,8 +164,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app-specs/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+            <state relative-caret-position="96">
+              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -215,8 +173,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/steps/ApplicationSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="344" column="5" selection-start-line="344" selection-start-column="5" selection-end-line="344" selection-end-column="5" />
+            <state relative-caret-position="1676">
+              <caret line="121" column="53" selection-start-line="121" selection-start-column="53" selection-end-line="121" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -225,42 +183,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/RuleDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="71" column="20" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app-specs/target/test-classes/environment.properties">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/scenarios/event.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/scenarios/rules.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app-specs/src/main/resources/api-spec.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="256" column="26" lean-forward="true" selection-start-line="256" selection-start-column="26" selection-end-line="256" selection-end-column="26" />
+            <state relative-caret-position="255">
+              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -275,10 +201,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/scenarios/pointScale.feature">
+        <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/environment.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/DefaultApiTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="41" lean-forward="true" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+            <state relative-caret-position="114">
+              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app-specs/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -303,13 +243,16 @@
       <find>DateTime</find>
       <find>Badge</find>
       <find>fire</find>
-      <find>plugins</find>
       <find>events</find>
       <find>BadgeDTO</find>
       <find>get</find>
+      <find>plugins</find>
+      <find>status</find>
+      <find>this.lastStatusCode = apiException.getCode();</find>
     </findStrings>
     <replaceStrings>
       <replace>ch.heig.amt.gamification.tests</replace>
+      <replace>lastStatusCode</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -331,7 +274,6 @@
         <option value="$PROJECT_DIR$/spring-server/pom.xml" />
         <option value="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/DefaultApi.java" />
         <option value="$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/helpers/Environment.java" />
-        <option value="$PROJECT_DIR$/app-specs/src/test/resources/environment.properties" />
         <option value="$PROJECT_DIR$/app-specs/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/repositories/BadgeRepository.java" />
         <option value="$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/api/endpoints/BadgesApiController.java" />
@@ -339,11 +281,12 @@
         <option value="$PROJECT_DIR$/spring-server/src/main/resources/api-spec.yaml" />
         <option value="$PROJECT_DIR$/app-specs/src/main/resources/api-spec.yaml" />
         <option value="$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/DefaultApiTest.java" />
-        <option value="$PROJECT_DIR$/app-specs/pom.xml" />
         <option value="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/badges.feature" />
         <option value="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/rules.feature" />
         <option value="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/pointScale.feature" />
         <option value="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/event.feature" />
+        <option value="$PROJECT_DIR$/app-specs/pom.xml" />
+        <option value="$PROJECT_DIR$/app-specs/src/test/resources/environment.properties" />
         <option value="$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/steps/ApplicationSteps.java" />
       </list>
     </option>
@@ -412,6 +355,14 @@
               <item name="app-specs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gamification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -434,6 +385,35 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="gamification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gamification" type="462c0819:PsiDirectoryNode" />
+              <item name="spec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gamification" type="462c0819:PsiDirectoryNode" />
+              <item name="spec" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gamification" type="462c0819:PsiDirectoryNode" />
+              <item name="spec" type="462c0819:PsiDirectoryNode" />
+              <item name="steps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
@@ -510,7 +490,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548071404901" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548072693898" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -689,7 +669,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22695000" />
+    <option name="totallyTimeSpent" value="23982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -806,48 +786,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/DefaultApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/JSON.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/Configuration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app-specs/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/environment.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="42" selection-start-column="42" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/SpecificationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -870,13 +812,6 @@
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/helpers/Environment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="64" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -1002,13 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/DefaultApiTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="328" lean-forward="true" selection-start-line="328" selection-end-line="328" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app-specs/target/surefire-reports/ch.heig.amt.gamification.tests.api.DefaultApiTest.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1020,13 +948,6 @@
     <entry file="file://$PROJECT_DIR$/app-specs/target/surefire-reports/TEST-ch.heig.amt.gamification.spec.SpecificationTest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4114" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app-specs/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app-specs/target/cucumber/index.html">
@@ -1056,17 +977,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/RuleDTO.java">
+    <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="71" column="20" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="20" />
+        <state relative-caret-position="85">
+          <caret line="15" column="79" lean-forward="true" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/scenarios/rules.feature">
+    <entry file="file://$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/SpecificationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        <state relative-caret-position="170">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/RuleDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="70" column="39" lean-forward="true" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-specs/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-specs/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/DefaultApiTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/environment.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/DefaultApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1348">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
+            <element signature="e#1317#1318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/helpers/Environment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1077,10 +1048,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/scenarios/rules.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/steps/ApplicationSteps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="344" column="5" selection-start-line="344" selection-start-column="5" selection-end-line="344" selection-end-column="5" />
+        <state relative-caret-position="1676">
+          <caret line="121" column="53" selection-start-line="121" selection-start-column="53" selection-end-line="121" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

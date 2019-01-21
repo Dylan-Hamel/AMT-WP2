@@ -32,7 +32,6 @@ public class ApplicationSteps {
     private String token = "fcb3cd0c1efd8afe09d0505e46cefa4c";
     private BadgeDTO badge;
     private List<BadgeDTO> badges;
-    private int status;
     private PointScaleDTO pointScale;
     private List<PointScaleDTO> pointscales;
     private EventDTO event;
@@ -80,6 +79,7 @@ public class ApplicationSteps {
 
     @Then("^I receive a (\\d+) status code$")
     public void i_receive_a_status_code(int arg1) throws Throwable {
+        // lastStatusCode = lastApiResponse.getStatusCode();
         assertEquals(arg1, lastStatusCode);
     }
 
@@ -92,21 +92,24 @@ public class ApplicationSteps {
     @When("^I POST it to /badges endpoint$")
     public void i_POST_it_to_badges_endpoint() throws Throwable {
         try{
-            ApiResponse<Void> apiResponse = api.badgesPostWithHttpInfo(token, badge);
-            this.status = apiResponse.getStatusCode();
+            this.lastApiResponse = api.badgesPostWithHttpInfo(token, badge);
+            this.lastStatusCode = lastApiResponse.getStatusCode();
         }catch (ApiException apiException){
-            this.status = apiException.getCode();
+            this.lastApiException = apiException;
+            this.lastStatusCode = apiException.getCode();
         }
     }
 
     @When("^I GET all badges from /badges endpoint$")
     public void i_GET_all_badges_from_badges_endpoint() throws Throwable {
         try{
-            ApiResponse<List<BadgeDTO>> apiResponse = api.badgesGetWithHttpInfo(token);
-            this.status = apiResponse.getStatusCode();
+            this.lastApiResponse = api.badgesGetWithHttpInfo(token);
+            this.lastStatusCode = lastApiResponse.getStatusCode();
+            ApiResponse<List<BadgeDTO>> apiResponse = this.lastApiResponse;
             this.badges = apiResponse.getData();
         }catch (ApiException apiException){
-            this.status = apiException.getCode();
+            this.lastApiException = apiException;
+            this.lastStatusCode = apiException.getCode();
         }
     }
 
@@ -115,10 +118,11 @@ public class ApplicationSteps {
         BadgeDTO badgeDTO = this.findBadgeByName(arg);
         if(badgeDTO != null){
             try{
-                ApiResponse<Void> apiResponse = api.badgesDeleteWithHttpInfo(token, badgeDTO.getName());
-                this.status = apiResponse.getStatusCode();
+                this.lastApiResponse = api.badgesDeleteWithHttpInfo(token, badgeDTO.getName());
+                this.lastStatusCode = lastApiResponse.getStatusCode();
             }catch (ApiException apiException) {
-                this.status = apiException.getCode();
+                this.lastApiException = apiException;
+                this.lastStatusCode = apiException.getCode();
             }
         }
     }
@@ -132,21 +136,24 @@ public class ApplicationSteps {
     @When("^I POST it to /pointscales endpoint$")
     public void i_POST_it_to_pointscales_endpoint() throws Throwable {
         try{
-            ApiResponse<Void> apiResponse = api.pointScalesPostWithHttpInfo(token, pointScale);
-            this.status = apiResponse.getStatusCode();
+            this.lastApiResponse = api.pointScalesPostWithHttpInfo(token, pointScale);
+            this.lastStatusCode = lastApiResponse.getStatusCode();
         }catch (ApiException apiException){
-            this.status = apiException.getCode();
+            this.lastApiException = apiException;
+            this.lastStatusCode = apiException.getCode();
         }
     }
 
     @When("^I GET all pointscales from /pointscales endpoint$")
     public void i_GET_all_pointscales_from_pointscales_endpoint() throws Throwable {
         try{
-            ApiResponse<List<PointScaleDTO>> apiResponse = api.pointScalesGetWithHttpInfo(token);
-            this.status = apiResponse.getStatusCode();
+            this.lastApiResponse = api.pointScalesGetWithHttpInfo(token);
+            this.lastStatusCode = lastApiResponse.getStatusCode();
+            ApiResponse<List<PointScaleDTO>> apiResponse = lastApiResponse;
             this.pointscales = apiResponse.getData();
         }catch (ApiException apiException){
-            this.status = apiException.getCode();
+            this.lastApiException = apiException;
+            this.lastStatusCode = apiException.getCode();
         }
     }
 
@@ -160,10 +167,11 @@ public class ApplicationSteps {
         PointScaleDTO pointScaleDTO = this.findPointScaleByName(arg);
         if(pointScaleDTO != null){
             try{
-                ApiResponse<PointScaleDTO> apiResponse = api.pointScalesNameGetWithHttpInfo(token, pointScaleDTO.getName());
-                this.status = apiResponse.getStatusCode();
+                this.lastApiResponse = api.pointScalesNameGetWithHttpInfo(token, pointScaleDTO.getName());
+                this.lastStatusCode = lastApiResponse.getStatusCode();
             }catch (ApiException apiException) {
-                this.status = apiException.getCode();
+                this.lastApiException = apiException;
+                this.lastStatusCode = apiException.getCode();
             }
         }
     }
@@ -187,9 +195,10 @@ public class ApplicationSteps {
             try{
                 // Il semble manquer un petit truc
                 ApiResponse<PointScaleDTO> apiResponse = api.pointScalesNamePutWithHttpInfo(token, pointScaleDTO.getName());
-                this.status = apiResponse.getStatusCode();
+                this.lastStatusCode = apiResponse.getStatusCode();
             }catch (ApiException apiException) {
-                this.status = apiException.getCode();
+                this.lastApiException = apiException;
+this.lastStatusCode = apiException.getCode();
             }
             */
         }
@@ -200,10 +209,11 @@ public class ApplicationSteps {
         PointScaleDTO pointScaleDTO = this.findPointScaleByName(arg);
         if(pointScaleDTO != null){
             try{
-                ApiResponse<Void> apiResponse = api.pointScalesNameDeleteWithHttpInfo(token, pointScaleDTO.getName());
-                this.status = apiResponse.getStatusCode();
+                this.lastApiResponse = api.pointScalesNameDeleteWithHttpInfo(token, pointScaleDTO.getName());
+                this.lastStatusCode = lastApiResponse.getStatusCode();
             }catch (ApiException apiException) {
-                this.status = apiException.getCode();
+                this.lastApiException = apiException;
+                this.lastStatusCode = apiException.getCode();
             }
         }
     }
@@ -223,9 +233,10 @@ public class ApplicationSteps {
     public void i_POST_it_to_the_events_endpoint() throws Throwable {
         try{
             ApiResponse<Void> apiResponse = api.eventsPostWithHttpInfo(token, event);
-            this.status = apiResponse.getStatusCode();
+            this.lastStatusCode = apiResponse.getStatusCode();
         }catch (ApiException apiException){
-            this.status = apiException.getCode();
+            this.lastApiException = apiException;
+            this.lastStatusCode = apiException.getCode();
         }
     }
 
@@ -240,9 +251,10 @@ public class ApplicationSteps {
     public void i_POST_it_to_events_endpoint() throws Throwable {
         try{
             ApiResponse<Void> apiResponse = api.rulesPostWithHttpInfo(token, rule);
-            this.status = apiResponse.getStatusCode();
+            this.lastStatusCode = apiResponse.getStatusCode();
         }catch (ApiException apiException){
-            this.status = apiException.getCode();
+            this.lastApiException = apiException;
+            this.lastStatusCode = apiException.getCode();
         }
     }
 
@@ -250,10 +262,11 @@ public class ApplicationSteps {
     public void i_GET_all_event_rules_from_rules_endpoint() throws Throwable {
         try{
             ApiResponse<List<RuleDTO>> apiResponse = api.rulesGetWithHttpInfo(token);
-            this.status = apiResponse.getStatusCode();
+            this.lastStatusCode = apiResponse.getStatusCode();
             this.rules = apiResponse.getData();
         }catch (ApiException apiException){
-            this.status = apiException.getCode();
+            this.lastApiException = apiException;
+            this.lastStatusCode = apiException.getCode();
         }
     }
 
@@ -267,9 +280,10 @@ public class ApplicationSteps {
         try{
             ApiResponse<List<RuleDTO>> apiResponse = api.rulesGetWithHttpInfo(token);
             this.rules = apiResponse.getData();
-            this.status = apiResponse.getStatusCode();
-        }catch (ApiException exception){
-            this.status = exception.getCode();
+            this.lastStatusCode = apiResponse.getStatusCode();
+        }catch (ApiException apiException){
+            this.lastApiException = apiException;
+            this.lastStatusCode = apiException.getCode();
         }
     }
 
@@ -291,9 +305,9 @@ public class ApplicationSteps {
         try{
             ApiResponse<List<RuleDTO>> apiResponse = api.rulesGetWithHttpInfo(token);
             this.rules = apiResponse.getData();
-            this.status = apiResponse.getStatusCode();
+            this.lastStatusCode = apiResponse.getStatusCode();
         }catch (ApiException exception){
-            this.status = exception.getCode();
+            this.lastStatusCode = exception.getCode();
         }
     }
 
@@ -305,9 +319,10 @@ public class ApplicationSteps {
             try{
                 // Il semble manquer un petit truc
                 ApiResponse<RuleDTO> apiResponse = api.rulesNamePutWithHttpInfo(token, ruleDTO.getName());
-                this.status = apiResponse.getStatusCode();
+                this.lastStatusCode = apiResponse.getStatusCode();
             }catch (ApiException apiException) {
-                this.status = apiException.getCode();
+                this.lastApiException = apiException;
+this.lastStatusCode = apiException.getCode();
             }
             */
         }
@@ -319,9 +334,10 @@ public class ApplicationSteps {
         if(ruleDTO != null){
             try{
                 ApiResponse<Void> apiResponse = api.pointScalesNameDeleteWithHttpInfo(token, ruleDTO.getName());
-                this.status = apiResponse.getStatusCode();
+                this.lastStatusCode = apiResponse.getStatusCode();
             }catch (ApiException apiException) {
-                this.status = apiException.getCode();
+                this.lastApiException = apiException;
+                this.lastStatusCode = apiException.getCode();
             }
         }
     }
