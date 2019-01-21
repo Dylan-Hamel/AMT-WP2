@@ -27,7 +27,7 @@ import java.io.IOException;
  * Rule
  */
 @ApiModel(description = "Rule")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-01-21T12:18:58.316+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-01-21T16:10:19.911+01:00")
 public class RuleDTO {
   @SerializedName("name")
   private String name = null;

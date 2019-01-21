@@ -28,7 +28,7 @@ import java.math.BigDecimal;
  * How many points an user has on a given point scale
  */
 @ApiModel(description = "How many points an user has on a given point scale")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-01-21T12:18:58.316+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-01-21T16:10:19.911+01:00")
 public class PointAwardDTO {
   @SerializedName("pointAwardId")
   private Integer pointAwardId = null;

@@ -18,7 +18,7 @@ import ch.heig.amt.gamification.tests.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-01-21T12:18:58.316+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-01-21T16:10:19.911+01:00")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;
