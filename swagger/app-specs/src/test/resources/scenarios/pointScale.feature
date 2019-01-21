@@ -14,19 +14,19 @@ Feature: PointScale tests
     And the result contains the correct pointscales
 
   Scenario: Get a pointscale
-    When I GET a pointscale from /pointscales/10 endpoint
+    When I GET a pointscale from /pointscales/"pointscale-test" endpoint
     Then I receive a 200 status code
     And the pointscale is the correct pointscale
 
   Scenario: Update a pointscale
     Given I have a new pointScale payload
-    When I GET a pointscale from /pointscales/10 endpoint
+    When I GET a pointscale from /pointscales/"pointscale-test" endpoint
     Then I receive a 200 status code
     And I PUT it to the /pointscales endpoint
     Then I receive a 200 status code
 
   Scenario: Delete a pointscale
-    When I GET a pointscale from /pointscales/10 endpoint
+    When I GET a pointscale from /pointscales/"pointscale-test" endpoint
     Then I receive a 200 status code
     When I DELETE the pointscale at the /pointscales endpoint
     Then I receive a 200 status code

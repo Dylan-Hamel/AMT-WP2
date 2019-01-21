@@ -162,7 +162,7 @@ public class ApplicationSteps {
         assertNotNull(this.findPointScaleByName("pointscale-test"));
     }
 
-    @When("^I GET a pointscale from /pointscales/(\\d+) endpoint$")
+    @When("^I GET a pointscale from /pointscales/{string} endpoint$")
     public void i_GET_a_pointscale_from_pointscales_endpoint(String arg) throws Throwable {
         PointScaleDTO pointScaleDTO = this.findPointScaleByName(arg);
         if(pointScaleDTO != null){
@@ -328,7 +328,7 @@ this.lastStatusCode = apiException.getCode();
         }
     }
 
-    @When("^I DELETE the rule at the /rules endpoint$")
+    @When("^I DELETE the rule {string} at the /rules endpoint$")
     public void i_DELETE_the_rule_at_the_rules_endpoint(String arg) throws Throwable {
         RuleDTO ruleDTO = this.findRuleByName(arg);
         if(ruleDTO != null){

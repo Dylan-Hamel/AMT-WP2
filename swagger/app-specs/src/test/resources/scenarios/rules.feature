@@ -28,7 +28,7 @@ Feature: Rules test
   Scenario: Delete a rule
     When I GET a rule from /rules endpoint
     Then I receive a 200 status code
-    When I DELETE the rule at the /rules endpoint
+    When I DELETE the rule "règles_une" at the /rules endpoint
     Then I receive a 200 status code
-    When I DELETE the rule at the /rules endpoint
+    When I DELETE the rule "règles_une" at the /rules endpoint
     Then I receive a 404 status code

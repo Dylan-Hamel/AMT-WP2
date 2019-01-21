@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df392601-1731-4931-bd46-833b71e013a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app-specs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/steps/ApplicationSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/steps/ApplicationSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/test/resources/environment.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/test/resources/environment.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/pointScale.feature" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/pointScale.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/rules.feature" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/rules.feature" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/spring-server/target/" />
     <ignored path="$PROJECT_DIR$/app-specs/target/" />
@@ -170,11 +170,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/steps/ApplicationSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1676">
-              <caret line="121" column="53" selection-start-line="121" selection-start-column="53" selection-end-line="121" selection-end-column="53" />
+            <state relative-caret-position="130">
+              <caret line="132" column="43" lean-forward="true" selection-start-line="132" selection-start-column="28" selection-end-line="132" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -185,8 +185,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/scenarios/rules.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="544">
+              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -223,6 +223,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/scenarios/pointScale.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" column="61" lean-forward="true" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -249,6 +258,9 @@
       <find>plugins</find>
       <find>status</find>
       <find>this.lastStatusCode = apiException.getCode();</find>
+      <find>delete the ru</find>
+      <find>règle</find>
+      <find>pointsca</find>
     </findStrings>
     <replaceStrings>
       <replace>ch.heig.amt.gamification.tests</replace>
@@ -282,12 +294,12 @@
         <option value="$PROJECT_DIR$/app-specs/src/main/resources/api-spec.yaml" />
         <option value="$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/DefaultApiTest.java" />
         <option value="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/badges.feature" />
-        <option value="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/rules.feature" />
-        <option value="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/pointScale.feature" />
         <option value="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/event.feature" />
         <option value="$PROJECT_DIR$/app-specs/pom.xml" />
         <option value="$PROJECT_DIR$/app-specs/src/test/resources/environment.properties" />
+        <option value="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/rules.feature" />
         <option value="$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/steps/ApplicationSteps.java" />
+        <option value="$PROJECT_DIR$/app-specs/src/test/resources/scenarios/pointScale.feature" />
       </list>
     </option>
   </component>
@@ -490,7 +502,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548072693898" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548073105223" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -669,13 +681,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23982000" />
+    <option name="totallyTimeSpent" value="24393000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21208054" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21208054" />
       <window_info id="Structure" order="1" weight="0.24964234" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -686,7 +698,7 @@
       <window_info anchor="bottom" id="Database Console" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.47733712" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.47733712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39954075" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -970,13 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/scenarios/pointScale.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="41" lean-forward="true" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1050,18 +1055,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/scenarios/rules.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        <state relative-caret-position="544">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/steps/ApplicationSteps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1676">
-          <caret line="121" column="53" selection-start-line="121" selection-start-column="53" selection-end-line="121" selection-end-column="53" />
+        <state relative-caret-position="130">
+          <caret line="132" column="43" lean-forward="true" selection-start-line="132" selection-start-column="28" selection-end-line="132" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/scenarios/pointScale.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="61" lean-forward="true" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
         </state>
       </provider>
     </entry>
