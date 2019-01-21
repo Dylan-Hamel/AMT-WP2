@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df392601-1731-4931-bd46-833b71e013a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/ApiException.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/ApiException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/Pair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/StringUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/auth/ApiKeyAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/auth/ApiKeyAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/auth/OAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/auth/OAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/ApplicationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/ApplicationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/BadgeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/BadgeDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/EventDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/EventDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/PointAwardDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/PointAwardDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/PointScaleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/PointScaleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/PropertyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/PropertyEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/RuleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/RuleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/RuleResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/RuleResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/DefaultApiTest.java" beforeDir="false" />
-    </list>
+    <list default="true" id="df392601-1731-4931-bd46-833b71e013a0" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/spring-server/target/" />
     <ignored path="$PROJECT_DIR$/app-specs/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -185,19 +167,55 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/DefaultApiTest.java">
+        <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/ApiException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+            <state relative-caret-position="124">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-server/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/repositories/BadgeRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/entities/ApplicationEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/ApiException.java">
+        <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/entities/BadgeEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+            <state relative-caret-position="102">
+              <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/entities/PointScaleEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -221,27 +239,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app-specs/src/test/java/ch/heig/amt/gamification/spec/steps/ApplicationSteps.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="244" column="43" selection-start-line="244" selection-start-column="43" selection-end-line="244" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/tests/model/PropertyEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-828">
-              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/ch/heig/amt/gamification/DefaultApi.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-153">
@@ -255,29 +252,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/scenarios/event.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/scenarios/pointScale.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>io.swagger</find>
       <find>compile</find>
       <find>test</find>
       <find>url</find>
@@ -307,6 +285,7 @@
       <find>regle</find>
       <find>print</find>
       <find>List</find>
+      <find>lock</find>
     </findStrings>
     <replaceStrings>
       <replace>ch.heig.amt.gamification.tests</replace>
@@ -361,11 +340,11 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="wp2.tests" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="swagger-spring" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="wp2.tests" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="swagger-spring" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
       </expand>
@@ -394,62 +373,6 @@
               <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="app-specs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gamification" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-specs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="scenarios" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="full-project" type="b2602c69:ProjectViewProjectNode" />
@@ -506,7 +429,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548083212935" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548091413319" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -533,7 +456,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.wp2.tests [compile]">
+  <component name="RunManager" selected="Spring Boot.Swagger2SpringBoot">
     <configuration name="swagger-spring [clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -643,9 +566,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Maven.swagger-spring [compile]" />
         <item itemvalue="Maven.wp2.tests [compile]" />
         <item itemvalue="Maven.wp2.tests [test]" />
-        <item itemvalue="Maven.swagger-spring [compile]" />
         <item itemvalue="Maven.swagger-spring [clean]" />
       </list>
     </recent_temporary>
@@ -685,10 +608,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32314000" />
+    <option name="totallyTimeSpent" value="34677000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21208054" />
       <window_info id="Structure" order="1" weight="0.24964234" />
@@ -778,8 +702,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app-specs/src/main/java/src/test/java/io/swagger/tests/api/DefaultApiTest.java" />
-    <entry file="file://$PROJECT_DIR$/app-specs/src/main/resources/swagger.yaml" />
     <entry file="file://$PROJECT_DIR$/app-specs/target/classes/api-spec.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -795,20 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/entities/BadgeEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/repositories/BadgeRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -992,13 +900,6 @@
     <entry file="file://$PROJECT_DIR$/app-specs/src/test/resources/environment.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/spring-server/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/Assert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1095,6 +996,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/repositories/BadgeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/entities/ApplicationEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/entities/PointScaleEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-server/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-server/src/main/java/ch/heig/amt/entities/BadgeEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
         </state>
       </provider>
     </entry>
