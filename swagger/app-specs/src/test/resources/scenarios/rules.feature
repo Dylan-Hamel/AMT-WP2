@@ -3,7 +3,7 @@ Feature: Rules test
   Background:
     Given there is a gamification server
 
-  Scenario: Creat new event rule
+  Scenario: Create new event rule
     Given I have a new rules payload
     When I POST it to /events endpoint
     Then I receive a 201 status code
@@ -13,10 +13,10 @@ Feature: Rules test
     Then I receive a 200 status code
     And the result contains the correct rules
 
-  Scenario: Fetch specific envent rule
+  Scenario: Fetch specific event rule
     When I GET a rule from /rules endpoint
     Then I receive a 200 status code
-    And the rule is the correct poinruletscale
+    And the rule is the correct rule
 
   Scenario: Update specific rule
     Given I have a new rule payload

@@ -83,8 +83,8 @@ public class ApplicationSteps {
         assertEquals(arg1, lastStatusCode);
     }
 
-    @Given("^I have Badge payload$")
-    public void i_have_Badge_payload() throws Throwable {
+    @Given("^I have a badge payload$")
+    public void i_have_a_badge_payload() throws Throwable {
         this.badge = new BadgeDTO();
         this.badge.setName("bade-test");
     }
@@ -183,6 +183,7 @@ public class ApplicationSteps {
     public void i_PUT_it_to_the_pointscales_endpoint() throws Throwable {
         PointScaleDTO pointScaleDTO = this.findPointScaleByName("pointscale-test-test");
         if(pointScaleDTO != null){
+            /*
             try{
                 // Il semble manquer un petit truc
                 ApiResponse<PointScaleDTO> apiResponse = api.pointScalesNamePutWithHttpInfo(token, pointScaleDTO.getName());
@@ -190,6 +191,7 @@ public class ApplicationSteps {
             }catch (ApiException apiException) {
                 this.status = apiException.getCode();
             }
+            */
         }
     }
 
@@ -271,8 +273,8 @@ public class ApplicationSteps {
         }
     }
 
-    @Then("^the rule is the correct poinruletscale$")
-    public void the_rule_is_the_correct_poinruletscale() throws Throwable {
+    @Then("^the rule is the correct rule$")
+    public void the_rule_is_the_correct_rule() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
@@ -299,6 +301,7 @@ public class ApplicationSteps {
     public void i_PUT_it_to_the_rules_endpoint() throws Throwable {
         RuleDTO ruleDTO = this.findRuleByName("règles_deux");
         if(ruleDTO != null){
+            /*
             try{
                 // Il semble manquer un petit truc
                 ApiResponse<RuleDTO> apiResponse = api.rulesNamePutWithHttpInfo(token, ruleDTO.getName());
@@ -306,6 +309,7 @@ public class ApplicationSteps {
             }catch (ApiException apiException) {
                 this.status = apiException.getCode();
             }
+            */
         }
     }
 
@@ -320,6 +324,24 @@ public class ApplicationSteps {
                 this.status = apiException.getCode();
             }
         }
+    }
+
+    @Then("^the response contains new badgeID$")
+    public void the_response_contains_new_badgeID() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^the response contains my badge$")
+    public void the_response_contains_my_badge() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Then("^the event triggered some pointAward$")
+    public void the_event_triggered_some_pointAward() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
     }
 
 }
