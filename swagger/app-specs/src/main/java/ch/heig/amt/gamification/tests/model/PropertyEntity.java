@@ -24,30 +24,51 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * A point scale in an application
+ * List of properties
  */
-@ApiModel(description = "A point scale in an application")
+@ApiModel(description = "List of properties")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-01-21T10:03:48.522+01:00")
-public class PointScaleDTO {
-  @SerializedName("name")
-  private String name = null;
+public class PropertyEntity {
+  @SerializedName("cle")
+  private String cle = null;
 
-  public PointScaleDTO name(String name) {
-    this.name = name;
+  @SerializedName("val")
+  private String val = null;
+
+  public PropertyEntity cle(String cle) {
+    this.cle = cle;
     return this;
   }
 
    /**
-   * The name of the point scale
-   * @return name
+   * Get cle
+   * @return cle
   **/
-  @ApiModelProperty(value = "The name of the point scale")
-  public String getName() {
-    return name;
+  @ApiModelProperty(value = "")
+  public String getCle() {
+    return cle;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setCle(String cle) {
+    this.cle = cle;
+  }
+
+  public PropertyEntity val(String val) {
+    this.val = val;
+    return this;
+  }
+
+   /**
+   * Get val
+   * @return val
+  **/
+  @ApiModelProperty(value = "")
+  public String getVal() {
+    return val;
+  }
+
+  public void setVal(String val) {
+    this.val = val;
   }
 
 
@@ -59,22 +80,24 @@ public class PointScaleDTO {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PointScaleDTO pointScaleDTO = (PointScaleDTO) o;
-    return Objects.equals(this.name, pointScaleDTO.name);
+    PropertyEntity propertyEntity = (PropertyEntity) o;
+    return Objects.equals(this.cle, propertyEntity.cle) &&
+        Objects.equals(this.val, propertyEntity.val);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(cle, val);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PointScaleDTO {\n");
+    sb.append("class PropertyEntity {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    cle: ").append(toIndentedString(cle)).append("\n");
+    sb.append("    val: ").append(toIndentedString(val)).append("\n");
     sb.append("}");
     return sb.toString();
   }

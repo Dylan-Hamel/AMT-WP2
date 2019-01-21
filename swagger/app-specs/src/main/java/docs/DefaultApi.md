@@ -4,8 +4,9 @@ All URIs are relative to *http://localhost:8080/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**badgesDelete**](DefaultApi.md#badgesDelete) | **DELETE** /badges | Deletes specific badge
 [**badgesGet**](DefaultApi.md#badgesGet) | **GET** /badges | List all badges linked to current application
+[**badgesIdDelete**](DefaultApi.md#badgesIdDelete) | **DELETE** /badges/{id} | Deletes specific badge
+[**badgesIdPut**](DefaultApi.md#badgesIdPut) | **PUT** /badges/{id} | Update a given badge
 [**badgesPost**](DefaultApi.md#badgesPost) | **POST** /badges | Create new badge
 [**eventsPost**](DefaultApi.md#eventsPost) | **POST** /events | Create an event
 [**pointScalesGet**](DefaultApi.md#pointScalesGet) | **GET** /pointScales | List point scales linked to current application
@@ -21,50 +22,6 @@ Method | HTTP request | Description
 [**usersGet**](DefaultApi.md#usersGet) | **GET** /users | List all users linked to current application
 [**usersIdGet**](DefaultApi.md#usersIdGet) | **GET** /users/{id} | Fetch specific user
 
-
-<a name="badgesDelete"></a>
-# **badgesDelete**
-> badgesDelete(xGamificationToken, id)
-
-Deletes specific badge
-
-### Example
-```java
-// Import classes:
-//import ch.heig.amt.gamification.tests.ApiException;
-//import ch.heig.amt.gamification.tests.api.DefaultApi;
-
-
-DefaultApi apiInstance = new DefaultApi();
-String xGamificationToken = "xGamificationToken_example"; // String | Token Auth
-Integer id = 56; // Integer | Badge name
-try {
-    apiInstance.badgesDelete(xGamificationToken, id);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#badgesDelete");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xGamificationToken** | **String**| Token Auth |
- **id** | **Integer**| Badge name |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
 
 <a name="badgesGet"></a>
 # **badgesGet**
@@ -108,6 +65,96 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+<a name="badgesIdDelete"></a>
+# **badgesIdDelete**
+> badgesIdDelete(xGamificationToken, id)
+
+Deletes specific badge
+
+### Example
+```java
+// Import classes:
+//import ch.heig.amt.gamification.tests.ApiException;
+//import ch.heig.amt.gamification.tests.api.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+String xGamificationToken = "xGamificationToken_example"; // String | Token Auth
+Integer id = 56; // Integer | Badge name
+try {
+    apiInstance.badgesIdDelete(xGamificationToken, id);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#badgesIdDelete");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xGamificationToken** | **String**| Token Auth |
+ **id** | **Integer**| Badge name |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="badgesIdPut"></a>
+# **badgesIdPut**
+> badgesIdPut(xGamificationToken, id, body)
+
+Update a given badge
+
+### Example
+```java
+// Import classes:
+//import ch.heig.amt.gamification.tests.ApiException;
+//import ch.heig.amt.gamification.tests.api.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+String xGamificationToken = "xGamificationToken_example"; // String | Token Auth
+Integer id = 56; // Integer | 
+BadgeDTO body = new BadgeDTO(); // BadgeDTO | 
+try {
+    apiInstance.badgesIdPut(xGamificationToken, id, body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#badgesIdPut");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xGamificationToken** | **String**| Token Auth |
+ **id** | **Integer**|  |
+ **body** | [**BadgeDTO**](BadgeDTO.md)|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 <a name="badgesPost"></a>
 # **badgesPost**
@@ -283,7 +330,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 <a name="pointScalesIdGet"></a>
@@ -505,12 +552,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 <a name="rulesIdGet"></a>
 # **rulesIdGet**
-> RuleDTO rulesIdGet(xGamificationToken, id)
+> RuleResponseDTO rulesIdGet(xGamificationToken, id)
 
 Fetch specific event rule
 
@@ -525,7 +572,7 @@ DefaultApi apiInstance = new DefaultApi();
 String xGamificationToken = "xGamificationToken_example"; // String | Token Auth
 Integer id = 56; // Integer | Event rule name
 try {
-    RuleDTO result = apiInstance.rulesIdGet(xGamificationToken, id);
+    RuleResponseDTO result = apiInstance.rulesIdGet(xGamificationToken, id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#rulesIdGet");
@@ -542,7 +589,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RuleDTO**](RuleDTO.md)
+[**RuleResponseDTO**](RuleResponseDTO.md)
 
 ### Authorization
 

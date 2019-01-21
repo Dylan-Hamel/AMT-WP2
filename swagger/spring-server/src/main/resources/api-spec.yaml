@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: '0.1.1'
+  version: '0.1.2'
   title: AMT
   description: Gamification App
 host: localhost:8080

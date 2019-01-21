@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **name** | **String** |  |  [optional]
 **type** | **String** |  |  [optional]
 **quantity** | **Integer** |  |  [optional]
-**badge** | [**BadgesResponseDTO**](BadgesResponseDTO.md) |  |  [optional]
+**badge** | [**BadgeDTO**](BadgeDTO.md) |  |  [optional]
+**pointScale** | [**PointScaleDTO**](PointScaleDTO.md) |  |  [optional]
 
 
 
