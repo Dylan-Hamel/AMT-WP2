@@ -1378,7 +1378,7 @@ public class DefaultApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/rules/";
+        String localVarPath = "/rules";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1906,7 +1906,7 @@ public class DefaultApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/rules/";
+        String localVarPath = "/rules";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

@@ -27,7 +27,7 @@ import java.io.IOException;
  * A point scale in an application
  */
 @ApiModel(description = "A point scale in an application")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-01-21T10:03:48.522+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-01-21T12:18:58.316+01:00")
 public class PointScaleDTO {
   @SerializedName("name")
   private String name = null;

@@ -27,7 +27,7 @@ import java.io.IOException;
  * The info of a gamified application
  */
 @ApiModel(description = "The info of a gamified application")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-01-21T10:03:48.522+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-01-21T12:18:58.316+01:00")
 public class ApplicationDTO {
   @SerializedName("name")
   private String name = null;

@@ -14,11 +14,11 @@ Method | HTTP request | Description
 [**pointScalesIdGet**](DefaultApi.md#pointScalesIdGet) | **GET** /pointScales/{id} | Fetch specific point scale
 [**pointScalesIdPut**](DefaultApi.md#pointScalesIdPut) | **PUT** /pointScales/{id} | Update specific point scale
 [**pointScalesPost**](DefaultApi.md#pointScalesPost) | **POST** /pointScales | Create point scale
-[**rulesGet**](DefaultApi.md#rulesGet) | **GET** /rules/ | List events rules linked to current application
+[**rulesGet**](DefaultApi.md#rulesGet) | **GET** /rules | List events rules linked to current application
 [**rulesIdDelete**](DefaultApi.md#rulesIdDelete) | **DELETE** /rules/{id} | Delete specific event rule
 [**rulesIdGet**](DefaultApi.md#rulesIdGet) | **GET** /rules/{id} | Fetch specific event rule
 [**rulesIdPut**](DefaultApi.md#rulesIdPut) | **PUT** /rules/{id} | Update specific event rule
-[**rulesPost**](DefaultApi.md#rulesPost) | **POST** /rules/ | Create a new event rule
+[**rulesPost**](DefaultApi.md#rulesPost) | **POST** /rules | Create a new event rule
 [**usersGet**](DefaultApi.md#usersGet) | **GET** /users | List all users linked to current application
 [**usersIdGet**](DefaultApi.md#usersIdGet) | **GET** /users/{id} | Fetch specific user
 
