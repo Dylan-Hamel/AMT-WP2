@@ -76,7 +76,16 @@ public class EventsApiController implements EventsApi {
 
         // Set user, event time & properties
         event.setUserEntity(user);
-        event.getPropertyEntities().add((PropertyEntity) body.getProperties());
+
+        PropertyEntity propertyEntity = null;
+        for (int i = 0; i < body.getProperties().size(); i++) {
+            propertyEntity = new PropertyEntity();
+
+            propertyEntity.setCle(body.getProperties().get(i).getCle());
+            propertyEntity.setVal(body.getProperties().get(i).getVal());
+            event.getPropertyEntities().add(propertyEntity);
+        }
+
         event.setLocalDateTime(LocalDateTime.now());
         this.eventRepository.save(event);
 
