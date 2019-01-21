@@ -195,7 +195,7 @@
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Events Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="TestPlan.comments">Load test</stringProp>
-          <stringProp name="LoopController.loops">100</stringProp>
+          <stringProp name="LoopController.loops">50</stringProp>
         </LoopController>
         <hashTree>
           <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
@@ -216,12 +216,12 @@
                   <stringProp name="Argument.value">{&#xd;
   &quot;properties&quot;: [&#xd;
     {&#xd;
-      &quot;cle&quot;: &quot;comment&quot;,&#xd;
-      &quot;val&quot;: &quot;newComment&quot;&#xd;
+      &quot;cle&quot;: &quot;comment${id}&quot;,&#xd;
+      &quot;val&quot;: &quot;newComment${id}&quot;&#xd;
     }&#xd;
   ],&#xd;
   &quot;timestamp&quot;: &quot;2019-01-20T21:21:42.245Z&quot;,&#xd;
-  &quot;type&quot;: &quot;event1&quot;,&#xd;
+  &quot;type&quot;: &quot;event${id}&quot;,&#xd;
   &quot;user&quot;: &quot;dylan&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
