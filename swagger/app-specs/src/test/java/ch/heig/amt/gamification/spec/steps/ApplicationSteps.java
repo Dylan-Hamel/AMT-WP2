@@ -10,6 +10,7 @@ import ch.heig.amt.gamification.spec.helpers.Environment;
 import org.junit.Rule;
 import org.threeten.bp.OffsetDateTime;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertNotNull;
@@ -168,16 +169,13 @@ public class ApplicationSteps {
     }
 
     @When("^I GET a pointscale from /pointscales/\"(\\w+)\" endpoint$")
-    public void i_GET_a_pointscale_from_pointscales_endpoint(String arg) throws Throwable {
-        PointScaleDTO pointScaleDTO = this.findPointScaleByName(arg);
-        if(pointScaleDTO != null){
-            try{
-                this.lastApiResponse = api.pointScalesNameGetWithHttpInfo(token, pointScaleDTO.getName());
-                this.lastStatusCode = lastApiResponse.getStatusCode();
-            }catch (ApiException apiException) {
-                this.lastApiException = apiException;
-                this.lastStatusCode = apiException.getCode();
-            }
+    public void i_GET_a_pointscale_from_pointscales_endpoint(String pointScaleName) throws Throwable {
+        try{
+            this.lastApiResponse = api.pointScalesNameGetWithHttpInfo(token, pointScaleName);
+            this.lastStatusCode = lastApiResponse.getStatusCode();
+        }catch (ApiException apiException) {
+            this.lastApiException = apiException;
+            this.lastStatusCode = apiException.getCode();
         }
     }
 
@@ -231,7 +229,12 @@ this.lastStatusCode = apiException.getCode();
         event.setUser("Henri");
         event.setType("Boom");
         event.setTimestamp(OffsetDateTime.MAX.now());
-        //Attentio c'est quoi ce Object Properties  dans les events
+        PropertyEntity test = new PropertyEntity();
+        test.setCle("comment");
+        test.setVal("yeah");
+        List<PropertyEntity> propertyEntityList = new ArrayList<>();
+        propertyEntityList.add(test);
+        event.setProperties(propertyEntityList);
     }
 
     @When("^I POST it to the /events endpoint$")
@@ -336,15 +339,12 @@ this.lastStatusCode = apiException.getCode();
 
     @When("^I DELETE the rule \"(\\w+)\" at the /rules endpoint$")
     public void i_DELETE_the_rule_at_the_rules_endpoint(String arg) throws Throwable {
-        RuleDTO ruleDTO = this.findRuleByName(arg);
-        if(ruleDTO != null){
-            try{
-                ApiResponse<Void> apiResponse = api.pointScalesNameDeleteWithHttpInfo(token, ruleDTO.getName());
-                this.lastStatusCode = apiResponse.getStatusCode();
-            }catch (ApiException apiException) {
-                this.lastApiException = apiException;
-                this.lastStatusCode = apiException.getCode();
-            }
+        try{
+            this.lastApiResponse = api.pointScalesNameDeleteWithHttpInfo(token, arg);
+            this.lastStatusCode = lastApiResponse.getStatusCode();
+        }catch (ApiException apiException) {
+            this.lastApiException = apiException;
+            this.lastStatusCode = apiException.getCode();
         }
     }
 
