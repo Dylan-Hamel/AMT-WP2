@@ -30,12 +30,12 @@
           <collectionProp name="Arguments.arguments">
             <elementProp name="name" elementType="Argument">
               <stringProp name="Argument.name">name</stringProp>
-              <stringProp name="Argument.value">gaps1090</stringProp>
+              <stringProp name="Argument.value">test1</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="password" elementType="Argument">
               <stringProp name="Argument.name">password</stringProp>
-              <stringProp name="Argument.value">gapsgaps</stringProp>
+              <stringProp name="Argument.value">test1</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
@@ -101,7 +101,17 @@
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
           </HTTPSamplerProxy>
-          <hashTree/>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="badgeID Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+              <stringProp name="RegexExtractor.refname">badgeID</stringProp>
+              <stringProp name="RegexExtractor.regex">newID: (.+?)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PointScale creation Request" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -109,7 +119,7 @@
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-	&quot;name&quot;: &quot;pointScale1&quot;,&#xd;
+  &quot;name&quot;: &quot;pointScale1&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -129,7 +139,17 @@
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
           </HTTPSamplerProxy>
-          <hashTree/>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="pointScaleID Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+              <stringProp name="RegexExtractor.refname">pointScaleID</stringProp>
+              <stringProp name="RegexExtractor.regex">newId: (.+?)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Rule creation Request" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -137,8 +157,10 @@
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
+  &quot;badgeId&quot;: ${badgeID_g1},&#xd;
   &quot;name&quot;: &quot;rule1&quot;,&#xd;
-  &quot;threshold&quot;: 0&#xd;
+  &quot;pointScaleId&quot;: ${pointScaleID_g1},&#xd;
+  &quot;threshold&quot;: 2&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -158,7 +180,17 @@
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
           </HTTPSamplerProxy>
-          <hashTree/>
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ruleID Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+              <stringProp name="RegexExtractor.refname">ruleID</stringProp>
+              <stringProp name="RegexExtractor.regex">newid: (.+?)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
         </hashTree>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Events Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
@@ -182,7 +214,12 @@
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-  &quot;properties&quot;: {},&#xd;
+  &quot;properties&quot;: [&#xd;
+    {&#xd;
+      &quot;cle&quot;: &quot;comment&quot;,&#xd;
+      &quot;val&quot;: &quot;newComment&quot;&#xd;
+    }&#xd;
+  ],&#xd;
   &quot;timestamp&quot;: &quot;2019-01-20T21:21:42.245Z&quot;,&#xd;
   &quot;type&quot;: &quot;event1&quot;,&#xd;
   &quot;user&quot;: &quot;dylan&quot;&#xd;
