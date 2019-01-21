@@ -29,7 +29,8 @@ public class ApplicationSteps {
     private int lastStatusCode;
 
     //variables de tests
-    private String token = "fcb3cd0c1efd8afe09d0505e46cefa4c";
+    private static final String newBadgeName = "badge-test";
+    private final String token = "fcb3cd0c1efd8afe09d0505e46cefa4c";
     private BadgeDTO badge;
     private List<BadgeDTO> badges;
     private PointScaleDTO pointScale;
@@ -86,7 +87,7 @@ public class ApplicationSteps {
     @Given("^I have a badge payload$")
     public void i_have_a_badge_payload() throws Throwable {
         this.badge = new BadgeDTO();
-        this.badge.setName("bade-test");
+        this.badge.setName(newBadgeName);
     }
 
     @When("^I POST it to /badges endpoint$")
@@ -97,6 +98,13 @@ public class ApplicationSteps {
         }catch (ApiException apiException){
             this.lastApiException = apiException;
             this.lastStatusCode = apiException.getCode();
+        }
+    }
+
+    @Then("^the response contains new badgeID$")
+    public void the_response_contains_new_badgeID() throws Throwable {
+        if(findBadgeByName(newBadgeName) != null){
+            //ok
         }
     }
 
@@ -130,7 +138,7 @@ public class ApplicationSteps {
     @Given("^I have a pointscale payload$")
     public void i_have_a_pointscale_payload() throws Throwable {
         pointScale = new PointScaleDTO();
-        pointScale.setName("pointscale-test");
+        pointScale.setName("pointscaletest");
     }
 
     @When("^I POST it to /pointscales endpoint$")
@@ -159,10 +167,10 @@ public class ApplicationSteps {
 
     @Then("^the result contains the correct pointscales$")
     public void the_result_contains_the_correct_pointscales() throws Throwable {
-        assertNotNull(this.findPointScaleByName("pointscale-test"));
+        assertNotNull(this.findPointScaleByName("pointscaletest"));
     }
 
-    @When("^I GET a pointscale from /pointscales/{string} endpoint$")
+    @When("^I GET a pointscale from /pointscales/\"(\\w+)\" endpoint$")
     public void i_GET_a_pointscale_from_pointscales_endpoint(String arg) throws Throwable {
         PointScaleDTO pointScaleDTO = this.findPointScaleByName(arg);
         if(pointScaleDTO != null){
@@ -178,18 +186,18 @@ public class ApplicationSteps {
 
     @Then("^the pointscale is the correct pointscale$")
     public void the_pointscale_is_the_correct_pointscale() throws Throwable {
-        assertNotNull(this.findPointScaleByName("pointscale-test"));
+        assertNotNull(this.findPointScaleByName("pointscaletest"));
     }
 
     @Given("^I have a new pointScale payload$")
     public void i_have_a_new_pointScale_payload() throws Throwable {
         pointScale = new PointScaleDTO();
-        pointScale.setName("pointscale-test-test");
+        pointScale.setName("pointscaletesttest");
     }
 
     @Then("^I PUT it to the /pointscales endpoint$")
     public void i_PUT_it_to_the_pointscales_endpoint() throws Throwable {
-        PointScaleDTO pointScaleDTO = this.findPointScaleByName("pointscale-test-test");
+        PointScaleDTO pointScaleDTO = this.findPointScaleByName("pointscaletesttest");
         if(pointScaleDTO != null){
             /*
             try{
@@ -243,7 +251,7 @@ this.lastStatusCode = apiException.getCode();
     @Given("^I have a new rules payload$")
     public void i_have_a_new_rules_payload() throws Throwable {
         rule = new RuleDTO();
-        rule.setName("règles_une");
+        rule.setName("regles_une");
         rule.setThreshold(23);
     }
 
@@ -272,7 +280,7 @@ this.lastStatusCode = apiException.getCode();
 
     @Then("^the result contains the correct rules$")
     public void the_result_contains_the_correct_rules() throws Throwable {
-        assertNotNull(findRuleByName("règles_une"));
+        assertNotNull(findRuleByName("regles_une"));
     }
 
     @When("^I GET a rule from /rules endpoint$")
@@ -296,7 +304,7 @@ this.lastStatusCode = apiException.getCode();
     @Given("^I have a new rule payload$")
     public void i_have_a_new_rule_payload() throws Throwable {
         rule = new RuleDTO();
-        rule.setName("règles_deux");
+        rule.setName("regles_deux");
         rule.setThreshold(75);
     }
 
@@ -313,7 +321,7 @@ this.lastStatusCode = apiException.getCode();
 
     @Then("^I PUT it to the /rules endpoint$")
     public void i_PUT_it_to_the_rules_endpoint() throws Throwable {
-        RuleDTO ruleDTO = this.findRuleByName("règles_deux");
+        RuleDTO ruleDTO = this.findRuleByName("regles_deux");
         if(ruleDTO != null){
             /*
             try{
@@ -328,7 +336,7 @@ this.lastStatusCode = apiException.getCode();
         }
     }
 
-    @When("^I DELETE the rule {string} at the /rules endpoint$")
+    @When("^I DELETE the rule \"(\\w+)\" at the /rules endpoint$")
     public void i_DELETE_the_rule_at_the_rules_endpoint(String arg) throws Throwable {
         RuleDTO ruleDTO = this.findRuleByName(arg);
         if(ruleDTO != null){
@@ -342,22 +350,16 @@ this.lastStatusCode = apiException.getCode();
         }
     }
 
-    @Then("^the response contains new badgeID$")
-    public void the_response_contains_new_badgeID() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
     @Then("^the response contains my badge$")
     public void the_response_contains_my_badge() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        if(findBadgeByName(newBadgeName) != null){
+            //ToDo
+        }
     }
 
     @Then("^the event triggered some pointAward$")
     public void the_event_triggered_some_pointAward() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        //ToDo
     }
 
 }

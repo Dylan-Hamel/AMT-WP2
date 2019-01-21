@@ -14,7 +14,7 @@ Feature: PointScale tests
     And the result contains the correct pointscales
 
   Scenario: Get a pointscale
-    When I GET a pointscale from /pointscales/"pointscale-test" endpoint
+    When I GET a pointscale from /pointscales/"pointscaletest" endpoint
     Then I receive a 200 status code
     And the pointscale is the correct pointscale
 
