@@ -4,17 +4,17 @@ Feature: Rules test
     Given there is a gamification server
 
   Scenario: Create new event rule
-    Given I have a new rules payload
+    Given I have a new rules payload "regle1"
     When I POST it to /events endpoint
     Then I receive a 201 status code
 
   Scenario: list rules from current app
     When I GET all event rules from /rules endpoint
     Then I receive a 200 status code
-    And the result contains the correct rules
+    And the result contains the correct rule "regle1"
 
   Scenario: Fetch specific event rule
-    When I GET a rule from /rules endpoint
+    When I GET a rule from /rules/"regle1" endpoint
     Then I receive a 200 status code
     And the rule is the correct rule
 
@@ -26,9 +26,9 @@ Feature: Rules test
     Then I receive a 200 status code
 
   Scenario: Delete a rule
-    When I GET a rule from /rules endpoint
+    When I GET a rule from /rules/"regle1" endpoint
     Then I receive a 200 status code
-    When I DELETE the rule "regles_une" at the /rules endpoint
+    When I DELETE the rule "regle1" at the /rules endpoint
     Then I receive a 200 status code
-    When I DELETE the rule "regles_une" at the /rules endpoint
+    When I DELETE the rule "regle1" at the /rules endpoint
     Then I receive a 404 status code
